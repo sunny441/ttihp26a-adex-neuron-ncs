@@ -8,13 +8,13 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+Converts a 1.8v to 0v analog signal into an encoded 2-bit digital signal
 
-Explain how your project works
 
 ## How to test
 
-Explain how to use your project
+You can test by taking a voltage of 0 to 1.8v to the analog pin 0 and the encoded bits come out to the dedicated outputs 0 and 1
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Voltage Supplies
