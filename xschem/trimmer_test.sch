@@ -1,8 +1,9 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 B 2 -1060 -1440 -260 -1040 {flags=graph
 ypos1=0
@@ -20,7 +21,6 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-rawfile=$netlist_dir/trim.raw
 sim_type=tran
 y2=5.2e-6
 autoload=1
@@ -71,14 +71,14 @@ alter ven1 dc 1.8
 alter ven2 dc 0.0
 alter ven3 dc 0.0
 alter ven4 dc 0.0
-tran 1n 5u
+tran 1n 1u
 write trim.raw
 *plot en enN enMon
 *plot D0 D1 D2 D3
 *plot vstart
 *plot vbp vbp_casc
-*plot v(ibias)/300
-plot vmeas#branch
+plot v(ibias)/300
+*plot vmeas#branch
 *quit
 .endc
 "}
