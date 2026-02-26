@@ -26,15 +26,16 @@ alter ven1 dc 1.8
 alter ven2 dc 0.0
 alter ven3 dc 0.0
 alter ven4 dc 0.0
-tran 1n 1u
+tran 1n 5u
 write trim.raw
 *plot en enN enMon
 *plot D0 D1 D2 D3
 *plot vstart
 *plot vbp vbp_casc
-plot v(ibias)/300
-*plot vmeas#branch
+*plot v(ibias)/300
+plot vmeas#branch
 *quit
+write trim.raw
 .endc
 
 
