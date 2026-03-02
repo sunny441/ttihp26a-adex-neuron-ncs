@@ -5,6 +5,7 @@ V {}
 S {}
 F {}
 E {}
+<<<<<<< HEAD
 N -1470 -1430 -1470 -1400 {lab=out}
 N -1550 -1370 -1510 -1370 {lab=V_mem}
 N -1470 -1500 -1470 -1430 {lab=out}
@@ -251,11 +252,49 @@ C {lab_wire.sym} -2230 -2040 0 0 {name=p26 sig_type=std_logic lab=VDD}
 C {sg13g2_pr/sg13_hv_pmos.sym} -2120 -1990 0 0 {name=Mdum6
 l=2u
 w=1u
+=======
+N -1480 -1410 -1480 -1380 {lab=out}
+N -1560 -1350 -1520 -1350 {lab=V_mem}
+N -1700 -1720 -1700 -1650 {lab=#net1}
+N -1700 -1620 -1700 -1350 {lab=V_mem}
+N -1700 -1350 -1560 -1350 {lab=V_mem}
+N -1480 -1480 -1480 -1410 {lab=out}
+N -1560 -1510 -1520 -1510 {lab=V_mem}
+N -1560 -1510 -1560 -1350 {lab=V_mem}
+N -1520 -1740 -1520 -1680 {lab=#net2}
+N -1520 -1680 -1480 -1680 {lab=#net2}
+N -1480 -1710 -1480 -1680 {lab=#net2}
+N -1660 -1740 -1520 -1740 {lab=#net2}
+N -1660 -1650 -1370 -1650 {lab=out}
+N -1480 -1410 -1370 -1410 {lab=out}
+N -1370 -1650 -1370 -1410 {lab=out}
+N -1480 -1680 -1480 -1510 {lab=#net2}
+N -1480 -1820 -1480 -1740 {lab=VDD}
+N -1700 -1820 -1700 -1740 {lab=VDD}
+N -1480 -1350 -1480 -1270 {lab=GND}
+N -1370 -1410 -1310 -1410 {lab=out}
+N -1780 -1350 -1700 -1350 {lab=V_mem}
+N -1570 -1870 -1570 -1820 {lab=VDD}
+N -1570 -1820 -1480 -1820 {lab=VDD}
+N -1700 -1820 -1570 -1820 {lab=VDD}
+C {sg13g2_pr/sg13_hv_nmos.sym} -1500 -1350 0 0 {name=M1
+l=4u
+w=4u
+ng=1
+m=4
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_hv_pmos.sym} -1500 -1740 0 0 {name=M3
+l=4u
+w=4u
+>>>>>>> 236faf3 (added block schematics hierarchy)
 ng=1
 m=2
 model=sg13_hv_pmos
 spiceprefix=X
 }
+<<<<<<< HEAD
 C {lab_wire.sym} -2080 -1990 0 1 {name=p27 sig_type=std_logic lab=nwell}
 C {lab_wire.sym} -2100 -2040 0 0 {name=p28 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} -2100 -1940 0 0 {name=p29 sig_type=std_logic lab=out}
@@ -290,3 +329,34 @@ C {iopin.sym} -2290 -1580 3 1 {name=p37 lab=nwell
 }
 C {iopin.sym} -2120 -1580 3 1 {name=p38 lab=psub
 }
+=======
+C {sg13g2_pr/sg13_hv_pmos.sym} -1680 -1650 0 1 {name=M20
+l=0.5u
+w=4u
+ng=1
+m=4
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_hv_pmos.sym} -1680 -1740 0 1 {name=M2
+l=4u
+w=4u
+ng=1
+m=4
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_hv_pmos.sym} -1500 -1510 0 0 {name=M23
+l=4u
+w=8u
+ng=1
+m=4
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {opin.sym} -1310 -1410 0 0 {name=p1 lab=out}
+C {iopin.sym} -1780 -1350 0 1 {name=p2 lab=V_mem
+}
+C {iopin.sym} -1570 -1870 0 0 {name=p3 lab=VDD}
+C {iopin.sym} -1480 -1270 0 0 {name=p5 lab=GND}
+>>>>>>> 236faf3 (added block schematics hierarchy)

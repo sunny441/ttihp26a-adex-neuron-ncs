@@ -22,6 +22,10 @@ N 680 -370 680 -350 {lab=VDD}
 N 580 -290 580 -260 {lab=I_thrahp}
 N 680 -290 680 -260 {lab=I_lkahp}
 N -30 -150 -30 -130 {lab=VDD}
+<<<<<<< HEAD
+=======
+N 120 -10 150 -10 {lab=REQ}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 N -210 -100 -180 -100 {lab=I_in}
 N -530 -350 -530 -310 {lab=GND}
 N -630 -290 -440 -290 {lab=I_lk}
@@ -32,6 +36,10 @@ N -530 -220 -500 -220 {lab=GND}
 N -530 -150 -530 -110 {lab=GND}
 N -530 -110 -490 -110 {lab=GND}
 N -620 -180 -450 -180 {lab=Iref}
+<<<<<<< HEAD
+=======
+N -530 -60 -530 -20 {lab=I_adapt}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 N -530 40 -530 90 {lab=GND}
 N -530 90 -470 90 {lab=GND}
 N -600 10 -450 10 {lab=I_thrahp}
@@ -47,6 +55,10 @@ N -370 -150 -370 50 {lab=Iref}
 N -460 -60 -390 -60 {lab=I_adapt}
 N -450 40 -410 40 {lab=I_thrahp}
 N -450 150 -380 150 {lab=I_lkahp}
+<<<<<<< HEAD
+=======
+N 120 -30 160 -30 {lab=ACK}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 N -430 -380 -430 -350 {lab=I_thr}
 N -490 -350 -430 -350 {lab=I_thr}
 N -440 -290 -440 -260 {lab=I_lk}
@@ -54,6 +66,10 @@ N -490 -260 -440 -260 {lab=I_lk}
 N -450 -180 -450 -150 {lab=Iref}
 N -490 -150 -450 -150 {lab=Iref}
 N -640 -90 -530 -90 {lab=VDD}
+<<<<<<< HEAD
+=======
+N -620 -20 -530 -20 {lab=I_adapt}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 N -530 -20 -460 -20 {lab=I_adapt}
 N -460 -60 -460 -20 {lab=I_adapt}
 N -490 -60 -460 -60 {lab=I_adapt}
@@ -62,7 +78,14 @@ N -490 40 -450 40 {lab=I_thrahp}
 N -450 120 -450 150 {lab=I_lkahp}
 N -480 150 -450 150 {lab=I_lkahp}
 N -30 -130 150 -130 {lab=VDD}
+<<<<<<< HEAD
 N 120 -70 150 -70 {lab=VDD}
+=======
+N 150 -130 150 -70 {lab=VDD}
+N 120 -70 150 -70 {lab=VDD}
+N -30 120 120 120 {lab=GND}
+N -30 120 -30 150 {lab=GND}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 N -180 -100 -180 -70 {lab=I_in}
 N -320 -50 -180 -50 {lab=I_thr}
 N -340 -30 -180 -30 {lab=I_lk}
@@ -73,6 +96,7 @@ N -410 10 -410 40 {lab=I_thrahp}
 N -410 10 -180 10 {lab=I_thrahp}
 N -380 30 -380 150 {lab=I_lkahp}
 N -380 30 -180 30 {lab=I_lkahp}
+<<<<<<< HEAD
 N 390 -10 420 -10 {lab=#net2}
 N 560 -10 590 -10 {lab=ACK}
 N 310 -130 480 -130 {lab=VDD}
@@ -100,12 +124,18 @@ N 120 -10 150 -10 {lab=CapAdap}
 N 120 10 120 90 {lab=GND}
 N -30 90 120 90 {lab=GND}
 C {neuron.sym} -30 0 0 0 {name=Xneuron}
+=======
+N 120 10 120 120 {lab=GND}
+N 120 -50 160 -50 {lab=MEM}
+C {neuron.sym} -30 -10 0 0 {name=x1}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 C {simulator_commands_shown.sym} -240 -700 0 0 {name=example_Simulator1
 simulator=ngspice
 only_toplevel=false 
 value="
 .param temp=27
 
+<<<<<<< HEAD
 .ic V(xneuron.vmem)=0 V(xneuron.xref.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap.CapAdapt)=0
 
 .options gmin=1e-13
@@ -114,6 +144,12 @@ value="
 save V(ACK) V(REQ) V(vmem) V(xneuron.xref.vref) V(CapAdap)
 save V(xneuron.xfb.vmir) V(xneuron.xfb.vd) I(xneuron.xfb.vfb) V(xneuron.vfb)
 
+=======
+.control
+
+save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
+save V(ACK) V(REQ) V(MEM)
+>>>>>>> 236faf3 (added block schematics hierarchy)
 tran 50n 10m
 write neuron_tb.raw
 .endc
@@ -128,18 +164,31 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt"
 }
+<<<<<<< HEAD
 C {isource.sym} 450 -340 0 0 {name=Ispkthr value=4n}
 C {gnd.sym} 450 -290 0 0 {name=l40 lab=GND}
 C {isource.sym} -140 -320 0 0 {name=Iin value="dc 0 ac 0 pulse(0 1n 100u 20n 20n 5m 5m)"
+=======
+C {isource.sym} 450 -340 0 0 {name=Ispkthr value="dc 0 ac 0 pulse(0 4u 5m 20n 20n 5m 5m)"}
+C {gnd.sym} 450 -290 0 0 {name=l40 lab=GND}
+C {isource.sym} -140 -320 0 0 {name=Iin value="dc 0 ac 0 pulse(0 10n 100u 20n 20n 5m 5m)"
+>>>>>>> 236faf3 (added block schematics hierarchy)
 }
 C {lab_pin.sym} 450 -400 0 0 {name=p33 sig_type=std_logic lab=I_adapt}
 C {lab_pin.sym} -140 -270 0 0 {name=p35 sig_type=std_logic lab=I_in}
 C {lab_pin.sym} 270 -270 0 0 {name=p37 sig_type=std_logic lab=I_lk}
 C {lab_pin.sym} 190 -270 0 0 {name=p39 sig_type=std_logic lab=I_thr}
+<<<<<<< HEAD
 C {vsource.sym} -250 -350 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} -250 -240 0 0 {name=l7 lab=GND}
 C {vdd.sym} -250 -380 0 0 {name=l8 lab=VDD}
 C {isource.sym} 350 -320 0 0 {name=Iref value=1n}
+=======
+C {vsource.sym} -250 -350 0 0 {name=VDD1 value=1.5 savecurrent=false}
+C {gnd.sym} -250 -240 0 0 {name=l7 lab=GND}
+C {vdd.sym} -250 -380 0 0 {name=l8 lab=VDD}
+C {isource.sym} 350 -320 0 0 {name=Iref value=50n}
+>>>>>>> 236faf3 (added block schematics hierarchy)
 C {lab_pin.sym} 350 -270 0 0 {name=p1 sig_type=std_logic lab=Iref}
 C {vdd.sym} 350 -370 0 0 {name=l16 lab=VDD}
 C {vdd.sym} -140 -370 0 0 {name=l18 lab=VDD}
@@ -214,6 +263,7 @@ spiceprefix=X
 }
 C {gnd.sym} -480 200 3 0 {name=l11 lab=GND}
 C {lab_pin.sym} -600 120 0 0 {name=p8 sig_type=std_logic lab=I_lkahp}
+<<<<<<< HEAD
 C {lab_pin.sym} 590 80 2 1 {name=p9 sig_type=std_logic lab=ACK}
 C {lab_pin.sym} 190 -10 1 1 {name=p10 sig_type=std_logic lab=REQ}
 C {vdd.sym} -640 -90 0 0 {name=l6 lab=VDD}
@@ -257,3 +307,9 @@ device="ceramic capacitor"}
 C {gnd.sym} -400 210 0 0 {name=l21 lab=GND}
 C {lab_pin.sym} 150 -10 3 0 {name=p11 sig_type=std_logic lab=CapAdap}
 C {lab_pin.sym} 170 -50 2 0 {name=p12 sig_type=std_logic lab=vmem}
+=======
+C {lab_pin.sym} 160 -30 0 1 {name=p9 sig_type=std_logic lab=ACK}
+C {lab_pin.sym} 150 -10 0 1 {name=p10 sig_type=std_logic lab=REQ}
+C {vdd.sym} -640 -90 0 0 {name=l6 lab=VDD}
+C {lab_pin.sym} 160 -50 0 1 {name=p11 sig_type=std_logic lab=MEM}
+>>>>>>> 236faf3 (added block schematics hierarchy)
