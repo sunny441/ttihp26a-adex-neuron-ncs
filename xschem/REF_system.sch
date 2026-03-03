@@ -97,10 +97,14 @@ C {sg13g2_pr/sg13_hv_nmos.sym} -30 -140 0 1 {name=M14
 l=4u
 w=4u
 <<<<<<< HEAD
+<<<<<<< HEAD
 ng=2
 =======
 ng=1
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+ng=2
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 m=4
 model=sg13_hv_nmos
 spiceprefix=X

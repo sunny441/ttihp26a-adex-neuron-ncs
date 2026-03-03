@@ -11,6 +11,7 @@ N 480 -130 550 -130 {lab=#net1}
 N 610 -230 610 -170 {lab=VDD}
 N 610 -90 610 -20 {lab=GND}
 <<<<<<< HEAD
+<<<<<<< HEAD
 N 290 -130 340 -130 {lab=Vfb}
 N -40 -130 -10 -130 {lab=Vmem}
 N 400 -20 610 -20 {lab=GND}
@@ -24,19 +25,24 @@ N 1030 -230 1030 -170 {lab=VDD}
 N 1030 -90 1030 -20 {lab=GND}
 N 1110 -130 1180 -130 {lab=ACK}
 N 290 -130 340 -130 {lab=#net3}
+=======
+N 290 -130 340 -130 {lab=#net2}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N -40 -130 -10 -130 {lab=vmem}
 N 400 -20 610 -20 {lab=GND}
-N 610 -20 820 -20 {lab=GND}
-N 820 -20 1030 -20 {lab=GND}
 N 140 -20 400 -20 {lab=GND}
+<<<<<<< HEAD
 N 1180 80 1180 220 {lab=ACK}
 N 550 220 1180 220 {lab=ACK}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N 720 160 720 260 {lab=REQ}
 N 690 -130 720 -130 {lab=REQ}
 N 550 260 720 260 {lab=REQ}
 N 550 300 610 300 {lab=V_ref}
 N 140 -230 140 -180 {lab=VDD}
+<<<<<<< HEAD
 <<<<<<< HEAD
 N 290 -230 400 -230 {lab=VDD}
 N 520 -230 610 -230 {lab=VDD}
@@ -46,6 +52,10 @@ N 290 -230 400 -230 {lab=VDD}
 N 520 -230 610 -230 {lab=VDD}
 N 610 -230 820 -230 {lab=VDD}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+N 290 -230 400 -230 {lab=VDD}
+N 520 -230 610 -230 {lab=VDD}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N -130 -230 140 -230 {lab=VDD}
 N 400 100 400 200 {lab=VDD}
 N 400 100 520 100 {lab=VDD}
@@ -77,9 +87,13 @@ N -40 -130 -40 230 {lab=vmem}
 N 290 -300 290 -230 {lab=VDD}
 N 140 -230 290 -230 {lab=VDD}
 N 70 380 70 460 {lab=GND}
+<<<<<<< HEAD
 N 1180 80 1210 80 {lab=ACK}
 N 1180 -130 1180 80 {lab=ACK}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+N 550 230 580 230 {lab=ACK}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N 720 80 750 80 {lab=REQ}
 N 720 -130 720 80 {lab=REQ}
 N -530 -170 -530 20 {lab=I_in}
@@ -149,9 +163,9 @@ C {REF_system.sym} 400 260 0 0 {name=Xref}
 N -200 220 -200 240 {lab=REQ}
 N -350 280 -350 380 {lab=GND}
 N 400 320 400 380 {lab=GND}
-N 550 220 550 230 {lab=ACK}
 N 550 290 550 300 {lab=V_ref}
 N 250 230 250 250 {lab=vmem}
+<<<<<<< HEAD
 C {inv.sym} 480 -130 0 0 {name=x1}
 C {inv.sym} 690 -130 0 0 {name=x2}
 C {inv.sym} 900 -130 0 0 {name=x3}
@@ -161,15 +175,27 @@ C {FB_system.sym} 140 -120 0 0 {name=x6}
 C {ADAP_system.sym} -350 210 0 0 {name=x7}
 C {REF_system.sym} 400 260 0 0 {name=x8}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+C {inv.sym} 480 -130 0 0 {name=Xinv1}
+C {inv.sym} 690 -130 0 0 {name=Xinv2}
+C {DPI.sym} -360 -130 0 0 {name=Xdpi_vmem}
+C {FB_system.sym} 140 -120 0 0 {name=Xfb_system}
+C {ADAP_system.sym} -350 210 0 0 {name=Xadap_system}
+C {REF_system.sym} 400 260 0 0 {name=Xref_system}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 C {ipin.sym} 610 300 0 1 {name=p1 lab=V_ref}
 C {iopin.sym} 70 460 0 0 {name=p2 lab=GND}
 C {iopin.sym} 290 -300 0 0 {name=p3 lab=VDD}
 C {opin.sym} 750 80 0 0 {name=p4 lab=REQ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {ipin.sym} 580 230 0 1 {name=p5 lab=ACK}
 =======
 C {opin.sym} 1210 80 0 0 {name=p5 lab=ACK}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+C {ipin.sym} 580 230 0 1 {name=p5 lab=ACK}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 C {ipin.sym} -550 -170 0 0 {name=p6 lab=I_in
 }
 C {ipin.sym} -550 -130 0 0 {name=p7 lab=V_th
@@ -188,9 +214,13 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {opin.sym} -170 220 0 0 {name=p12 lab=CapAdap}
 C {opin.sym} -20 60 0 0 {name=p13 lab=Vmem}
 C {lab_wire.sym} 320 -130 0 0 {name=p14 sig_type=std_logic lab=Vfb}
 =======
 C {opin.sym} -40 70 0 0 {name=p12 lab=vmem}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+C {lab_pin.sym} -40 30 0 1 {name=p13 sig_type=std_logic lab=vmem}
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)

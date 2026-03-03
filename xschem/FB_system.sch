@@ -280,7 +280,7 @@ N -1700 -1820 -1570 -1820 {lab=VDD}
 C {sg13g2_pr/sg13_hv_nmos.sym} -1500 -1350 0 0 {name=M1
 l=4u
 w=4u
-ng=1
+ng=2
 m=4
 model=sg13_hv_nmos
 spiceprefix=X
@@ -288,8 +288,12 @@ spiceprefix=X
 C {sg13g2_pr/sg13_hv_pmos.sym} -1500 -1740 0 0 {name=M3
 l=4u
 w=4u
+<<<<<<< HEAD
 >>>>>>> 236faf3 (added block schematics hierarchy)
 ng=1
+=======
+ng=4
+>>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 m=2
 model=sg13_hv_pmos
 spiceprefix=X
@@ -333,7 +337,7 @@ C {iopin.sym} -2120 -1580 3 1 {name=p38 lab=psub
 C {sg13g2_pr/sg13_hv_pmos.sym} -1680 -1650 0 1 {name=M20
 l=0.5u
 w=4u
-ng=1
+ng=2
 m=4
 model=sg13_hv_pmos
 spiceprefix=X
@@ -341,7 +345,7 @@ spiceprefix=X
 C {sg13g2_pr/sg13_hv_pmos.sym} -1680 -1740 0 1 {name=M2
 l=4u
 w=4u
-ng=1
+ng=4
 m=4
 model=sg13_hv_pmos
 spiceprefix=X
@@ -349,7 +353,7 @@ spiceprefix=X
 C {sg13g2_pr/sg13_hv_pmos.sym} -1500 -1510 0 0 {name=M23
 l=4u
 w=8u
-ng=1
+ng=2
 m=4
 model=sg13_hv_pmos
 spiceprefix=X
