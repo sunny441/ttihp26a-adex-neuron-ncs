@@ -5,17 +5,17 @@ V {}
 S {}
 F {}
 E {}
-N -430 470 -300 470 {lab=#net1}
-N -300 470 -300 490 {lab=#net1}
+N -430 470 -300 470 {lab=CapAdapt}
+N -300 470 -300 490 {lab=CapAdapt}
 N -320 570 -300 570 {lab=GND}
 N -300 550 -300 570 {lab=GND}
 N -840 320 -790 320 {lab=V_adapt}
-N -750 220 -750 320 {lab=#net2}
+N -750 220 -750 320 {lab=#net1}
 N -750 130 -750 200 {lab=VDD}
 N -710 200 -670 200 {lab=REQ}
-N -750 350 -750 430 {lab=#net3}
-N -750 430 -730 430 {lab=#net3}
-N -300 470 -190 470 {lab=#net1}
+N -750 350 -750 430 {lab=#net2}
+N -750 430 -730 430 {lab=#net2}
+N -300 470 -190 470 {lab=CapAdapt}
 N -300 570 -150 570 {lab=GND}
 N -150 470 -150 570 {lab=GND}
 N -150 370 -150 440 {lab=I_in}
@@ -28,7 +28,7 @@ N -810 500 -730 500 {lab=V_lkahp}
 N -810 470 -730 470 {lab=V_thrahp}
 N -580 520 -580 570 {lab=GND}
 N -580 130 -580 420 {lab=VDD}
-N -730 430 -730 450 {lab=#net3}
+N -730 430 -730 450 {lab=#net2}
 N -730 490 -730 500 {lab=V_lkahp}
 C {sg13g2_pr/sg13_hv_pmos.sym} -730 200 0 1 {name=M19
 l=0.5u
@@ -41,7 +41,7 @@ spiceprefix=X
 C {sg13g2_pr/sg13_hv_pmos.sym} -770 320 0 0 {name=M21
 l=4u
 w=4u
-ng=1
+ng=2
 m=4
 model=sg13_hv_pmos
 spiceprefix=X
@@ -49,7 +49,7 @@ spiceprefix=X
 C {sg13g2_pr/sg13_hv_nmos.sym} -170 470 0 0 {name=M18
 l=4u
 w=4u
-ng=1
+ng=2
 m=4
 model=sg13_hv_nmos
 spiceprefix=X
@@ -59,7 +59,7 @@ m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
-C {DPI.sym} -580 470 0 0 {name=x1}
+C {DPI.sym} -580 470 0 0 {name=Xdpi_adapt}
 C {iopin.sym} -650 100 0 0 {name=p1 lab=VDD}
 C {iopin.sym} -320 610 0 0 {name=p2 lab=GND}
 C {ipin.sym} -670 200 0 1 {name=p3 lab=REQ}
@@ -67,3 +67,4 @@ C {ipin.sym} -840 320 2 1 {name=p4 lab=V_adapt}
 C {ipin.sym} -810 470 2 1 {name=p5 lab=V_thrahp}
 C {ipin.sym} -810 500 2 1 {name=p6 lab=V_lkahp}
 C {ipin.sym} -150 370 2 0 {name=p7 lab=I_in}
+C {lab_pin.sym} -300 470 3 1 {name=p13 sig_type=std_logic lab=CapAdapt}

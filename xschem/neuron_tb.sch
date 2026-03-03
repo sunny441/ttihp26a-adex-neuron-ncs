@@ -22,7 +22,6 @@ N 680 -370 680 -350 {lab=VDD}
 N 580 -290 580 -260 {lab=I_thrahp}
 N 680 -290 680 -260 {lab=I_lkahp}
 N -30 -150 -30 -130 {lab=VDD}
-N 120 -10 150 -10 {lab=REQ}
 N -210 -100 -180 -100 {lab=I_in}
 N -530 -350 -530 -310 {lab=GND}
 N -630 -290 -440 -290 {lab=I_lk}
@@ -49,7 +48,6 @@ N -370 -150 -370 50 {lab=Iref}
 N -460 -60 -390 -60 {lab=I_adapt}
 N -450 40 -410 40 {lab=I_thrahp}
 N -450 150 -380 150 {lab=I_lkahp}
-N 120 -30 160 -30 {lab=ACK}
 N -430 -380 -430 -350 {lab=I_thr}
 N -490 -350 -430 -350 {lab=I_thr}
 N -440 -290 -440 -260 {lab=I_lk}
@@ -66,10 +64,7 @@ N -490 40 -450 40 {lab=I_thrahp}
 N -450 120 -450 150 {lab=I_lkahp}
 N -480 150 -450 150 {lab=I_lkahp}
 N -30 -130 150 -130 {lab=VDD}
-N 150 -130 150 -70 {lab=VDD}
 N 120 -70 150 -70 {lab=VDD}
-N -30 120 120 120 {lab=GND}
-N -30 120 -30 150 {lab=GND}
 N -180 -100 -180 -70 {lab=I_in}
 N -320 -50 -180 -50 {lab=I_thr}
 N -340 -30 -180 -30 {lab=I_lk}
@@ -80,20 +75,42 @@ N -410 10 -410 40 {lab=I_thrahp}
 N -410 10 -180 10 {lab=I_thrahp}
 N -380 30 -380 150 {lab=I_lkahp}
 N -380 30 -180 30 {lab=I_lkahp}
-N 120 10 120 120 {lab=GND}
-N 120 -50 160 -50 {lab=MEM}
-C {neuron.sym} -30 -10 0 0 {name=x1}
+N 390 -10 420 -10 {lab=#net2}
+N 560 -10 590 -10 {lab=ACK}
+N 310 -130 480 -130 {lab=VDD}
+N 480 -130 480 -50 {lab=VDD}
+N 310 -130 310 -50 {lab=VDD}
+N 150 -130 310 -130 {lab=VDD}
+N 150 -130 150 -70 {lab=VDD}
+N 120 -50 190 -50 {lab=REQ}
+N 190 -50 190 -10 {lab=REQ}
+N 190 -10 250 -10 {lab=REQ}
+N 590 -10 590 110 {lab=ACK}
+N -220 110 590 110 {lab=ACK}
+N -220 70 -220 110 {lab=ACK}
+N -220 70 -180 70 {lab=ACK}
+N -30 90 -30 150 {lab=GND}
+N 310 90 480 90 {lab=GND}
+N 480 30 480 90 {lab=GND}
+N 310 30 310 90 {lab=GND}
+N 140 90 310 90 {lab=GND}
+N 120 -30 140 -30 {lab=GND}
+N 140 -30 140 90 {lab=GND}
+N -30 90 140 90 {lab=GND}
+C {neuron.sym} -30 0 0 0 {name=Xneuron}
 C {simulator_commands_shown.sym} -240 -700 0 0 {name=example_Simulator1
 simulator=ngspice
 only_toplevel=false 
 value="
 .param temp=27
 
+.ic V(xneuron.vmem)=0 V(xneuron.xref_system.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap_system.CapAdapt)=0
+
 .control
 
 save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
-save V(ACK) V(REQ) V(MEM)
-tran 50n 10m
+save V(ACK) V(REQ) V(xneuron.vmem) V(xneuron.xref_system.vref) V(xneuron.xadap_system.CapAdapt)
+tran 50n 20m
 write neuron_tb.raw
 .endc
 
@@ -107,7 +124,7 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt"
 }
-C {isource.sym} 450 -340 0 0 {name=Ispkthr value="dc 0 ac 0 pulse(0 4u 5m 20n 20n 5m 5m)"}
+C {isource.sym} 450 -340 0 0 {name=Ispkthr value=4u}
 C {gnd.sym} 450 -290 0 0 {name=l40 lab=GND}
 C {isource.sym} -140 -320 0 0 {name=Iin value="dc 0 ac 0 pulse(0 10n 100u 20n 20n 5m 5m)"
 }
@@ -115,10 +132,10 @@ C {lab_pin.sym} 450 -400 0 0 {name=p33 sig_type=std_logic lab=I_adapt}
 C {lab_pin.sym} -140 -270 0 0 {name=p35 sig_type=std_logic lab=I_in}
 C {lab_pin.sym} 270 -270 0 0 {name=p37 sig_type=std_logic lab=I_lk}
 C {lab_pin.sym} 190 -270 0 0 {name=p39 sig_type=std_logic lab=I_thr}
-C {vsource.sym} -250 -350 0 0 {name=VDD1 value=1.5 savecurrent=false}
+C {vsource.sym} -250 -350 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} -250 -240 0 0 {name=l7 lab=GND}
 C {vdd.sym} -250 -380 0 0 {name=l8 lab=VDD}
-C {isource.sym} 350 -320 0 0 {name=Iref value=50n}
+C {isource.sym} 350 -320 0 0 {name=Iref value=50u}
 C {lab_pin.sym} 350 -270 0 0 {name=p1 sig_type=std_logic lab=Iref}
 C {vdd.sym} 350 -370 0 0 {name=l16 lab=VDD}
 C {vdd.sym} -140 -370 0 0 {name=l18 lab=VDD}
@@ -193,7 +210,44 @@ spiceprefix=X
 }
 C {gnd.sym} -480 200 3 0 {name=l11 lab=GND}
 C {lab_pin.sym} -600 120 0 0 {name=p8 sig_type=std_logic lab=I_lkahp}
-C {lab_pin.sym} 160 -30 0 1 {name=p9 sig_type=std_logic lab=ACK}
-C {lab_pin.sym} 150 -10 0 1 {name=p10 sig_type=std_logic lab=REQ}
+C {lab_pin.sym} 590 80 2 1 {name=p9 sig_type=std_logic lab=ACK}
+C {lab_pin.sym} 190 -10 1 1 {name=p10 sig_type=std_logic lab=REQ}
 C {vdd.sym} -640 -90 0 0 {name=l6 lab=VDD}
-C {lab_pin.sym} 160 -50 0 1 {name=p11 sig_type=std_logic lab=MEM}
+C {inv.sym} 390 -10 0 0 {name=Xinv3}
+C {inv.sym} 560 -10 0 0 {name=Xinv4}
+C {capa.sym} -390 -320 0 0 {name=C1
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -390 -290 0 0 {name=l12 lab=GND}
+C {capa.sym} -400 -230 0 0 {name=C2
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -400 -200 0 0 {name=l13 lab=GND}
+C {capa.sym} -420 -120 0 0 {name=C3
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -420 -90 0 0 {name=l14 lab=GND}
+C {capa.sym} -440 -30 0 0 {name=C4
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -440 0 0 0 {name=l15 lab=GND}
+C {capa.sym} -420 70 0 0 {name=C5
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -420 100 0 0 {name=l17 lab=GND}
+C {capa.sym} -400 180 0 0 {name=C6
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -400 210 0 0 {name=l21 lab=GND}
