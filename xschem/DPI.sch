@@ -100,7 +100,7 @@ N 460 -280 460 -260 {lab=VDD}
 N 350 -260 460 -260 {lab=VDD}
 N 445 -70 445 -45 {lab=GND}
 N 350 -70 445 -70 {lab=GND}
-C {sg13g2_pr/sg13_hv_pmos.sym} 330 -260 0 0 {name=M24
+C {sg13g2_pr/sg13_hv_pmos.sym} 330 -260 0 0 {name=Mdifl
 l=8u
 w=4u
 ng=4
@@ -108,7 +108,7 @@ m=4
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_hv_pmos.sym} 560 -260 0 1 {name=M25
+C {sg13g2_pr/sg13_hv_pmos.sym} 560 -260 0 1 {name=Mdifr
 l=8u
 w=4u
 ng=4
@@ -116,7 +116,7 @@ m=4
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_hv_nmos.sym} 560 -130 0 1 {name=M28
+C {sg13g2_pr/sg13_hv_nmos.sym} 560 -130 0 1 {name=Mtau
 l=10u
 w=4u
 <<<<<<< HEAD

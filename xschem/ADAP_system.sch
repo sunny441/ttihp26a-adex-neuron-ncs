@@ -7,6 +7,7 @@ F {}
 E {}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 N -430 470 -300 470 {lab=CapAdap}
 N -300 470 -300 490 {lab=CapAdap}
 N -320 570 -300 570 {lab=GND}
@@ -24,6 +25,10 @@ N -300 470 -300 490 {lab=#net1}
 N -430 470 -300 470 {lab=CapAdapt}
 N -300 470 -300 490 {lab=CapAdapt}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+N -430 470 -300 470 {lab=CapAdap}
+N -300 470 -300 490 {lab=CapAdap}
+>>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 N -320 570 -300 570 {lab=GND}
 N -300 550 -300 570 {lab=GND}
 N -840 320 -790 320 {lab=V_adapt}
@@ -38,8 +43,12 @@ N -300 470 -190 470 {lab=#net1}
 =======
 N -750 350 -750 430 {lab=#net2}
 N -750 430 -730 430 {lab=#net2}
+<<<<<<< HEAD
 N -300 470 -190 470 {lab=CapAdapt}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+N -300 470 -190 470 {lab=CapAdap}
+>>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 N -300 570 -150 570 {lab=GND}
 N -150 470 -150 570 {lab=GND}
 N -150 370 -150 440 {lab=I_in}
@@ -62,6 +71,7 @@ N -730 430 -730 450 {lab=#net1}
 N -730 490 -730 500 {lab=V_lkahp}
 N -300 310 -300 470 {lab=CapAdap}
 N -300 310 -160 310 {lab=CapAdap}
+<<<<<<< HEAD
 N -750 230 -750 290 {lab=#net2}
 N -750 320 -700 320 {lab=VDD}
 N -700 130 -700 320 {lab=VDD}
@@ -73,6 +83,8 @@ N -730 430 -730 450 {lab=#net2}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N -730 490 -730 500 {lab=V_lkahp}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+>>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 C {sg13g2_pr/sg13_hv_pmos.sym} -730 200 0 1 {name=M19
 l=0.5u
 w=1u
@@ -120,6 +132,7 @@ footprint=1206
 device="ceramic capacitor"}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {DPI.sym} -580 470 0 0 {name=Xdpi2}
 =======
 C {DPI.sym} -580 470 0 0 {name=x1}
@@ -127,6 +140,9 @@ C {DPI.sym} -580 470 0 0 {name=x1}
 =======
 C {DPI.sym} -580 470 0 0 {name=Xdpi_adapt}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+C {DPI.sym} -580 470 0 0 {name=Xdpi2}
+>>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 C {iopin.sym} -650 100 0 0 {name=p1 lab=VDD}
 C {iopin.sym} -320 610 0 0 {name=p2 lab=GND}
 C {ipin.sym} -670 200 0 1 {name=p3 lab=REQ}
@@ -136,9 +152,13 @@ C {ipin.sym} -810 500 2 1 {name=p6 lab=V_lkahp}
 C {ipin.sym} -150 370 2 0 {name=p7 lab=I_in}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {opin.sym} -160 310 2 1 {name=p8 lab=CapAdap}
 =======
 >>>>>>> 236faf3 (added block schematics hierarchy)
 =======
 C {lab_pin.sym} -300 470 3 1 {name=p13 sig_type=std_logic lab=CapAdapt}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+C {opin.sym} -160 310 2 1 {name=p8 lab=CapAdap}
+>>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
