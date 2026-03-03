@@ -29,13 +29,10 @@ N 400 -230 520 -230 {lab=VDD}
 N -350 70 -350 140 {lab=VDD}
 N -350 70 -130 70 {lab=VDD}
 N -130 -230 -130 70 {lab=VDD}
-N -80 160 -80 240 {lab=REQ}
 N 720 80 720 160 {lab=REQ}
 N 100 -20 100 380 {lab=GND}
 N 100 380 400 380 {lab=GND}
 N 70 380 100 380 {lab=GND}
-N -200 240 -80 240 {lab=REQ}
-N -80 160 720 160 {lab=REQ}
 N -40 230 250 230 {lab=vmem}
 N -40 -130 -40 230 {lab=vmem}
 N 290 -300 290 -230 {lab=VDD}
@@ -46,9 +43,7 @@ N 720 80 750 80 {lab=REQ}
 N 720 -130 720 80 {lab=REQ}
 N -530 -170 -530 20 {lab=I_in}
 N -550 -170 -530 -170 {lab=I_in}
-N -530 20 -170 20 {lab=I_in}
-N -170 20 -170 180 {lab=I_in}
-N -200 180 -170 180 {lab=I_in}
+N -530 20 -150 20 {lab=I_in}
 N -550 250 -500 250 {lab=V_lkahp}
 N -550 210 -500 210 {lab=V_thrahp}
 N -550 160 -500 160 {lab=V_adapt}
@@ -72,17 +67,22 @@ N 140 -60 140 -20 {lab=GND}
 N 100 -20 140 -20 {lab=GND}
 N -500 160 -500 190 {lab=V_adapt}
 N -500 210 -500 230 {lab=V_thrahp}
-N -200 220 -200 240 {lab=REQ}
 N -350 280 -350 380 {lab=GND}
 N 400 320 400 380 {lab=GND}
 N 550 290 550 300 {lab=V_ref}
 N 250 230 250 250 {lab=vmem}
+N -170 160 720 160 {lab=REQ}
+N -170 160 -170 170 {lab=REQ}
+N -200 170 -170 170 {lab=REQ}
+N -150 20 -150 190 {lab=I_in}
+N -200 190 -150 190 {lab=I_in}
+N -200 220 -170 220 {lab=REQ}
 C {inv.sym} 480 -130 0 0 {name=Xinv1}
 C {inv.sym} 690 -130 0 0 {name=Xinv2}
-C {DPI.sym} -360 -130 0 0 {name=Xdpi_vmem}
-C {FB_system.sym} 140 -120 0 0 {name=Xfb_system}
-C {ADAP_system.sym} -350 210 0 0 {name=Xadap_system}
-C {REF_system.sym} 400 260 0 0 {name=Xref_system}
+C {DPI.sym} -360 -130 0 0 {name=Xdpi1}
+C {FB_system.sym} 140 -120 0 0 {name=Xfb}
+C {ADAP_system.sym} -350 210 0 0 {name=Xadap}
+C {REF_system.sym} 400 260 0 0 {name=Xref}
 C {ipin.sym} 610 300 0 1 {name=p1 lab=V_ref}
 C {iopin.sym} 70 460 0 0 {name=p2 lab=GND}
 C {iopin.sym} 290 -300 0 0 {name=p3 lab=VDD}
@@ -106,3 +106,4 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {lab_pin.sym} -40 30 0 1 {name=p13 sig_type=std_logic lab=vmem}
+C {opin.sym} -170 220 0 0 {name=p12 lab=CapAdap}

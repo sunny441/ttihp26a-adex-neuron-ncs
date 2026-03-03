@@ -93,10 +93,10 @@ N -30 90 -30 150 {lab=GND}
 N 310 90 480 90 {lab=GND}
 N 480 30 480 90 {lab=GND}
 N 310 30 310 90 {lab=GND}
-N 140 90 310 90 {lab=GND}
-N 120 -30 140 -30 {lab=GND}
-N 140 -30 140 90 {lab=GND}
-N -30 90 140 90 {lab=GND}
+N 120 90 310 90 {lab=GND}
+N 120 -10 120 90 {lab=GND}
+N -30 90 120 90 {lab=GND}
+N 120 -30 150 -30 {lab=CapAdap}
 C {neuron.sym} -30 0 0 0 {name=Xneuron}
 C {simulator_commands_shown.sym} -240 -700 0 0 {name=example_Simulator1
 simulator=ngspice
@@ -104,12 +104,12 @@ only_toplevel=false
 value="
 .param temp=27
 
-.ic V(xneuron.vmem)=0 V(xneuron.xref_system.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap_system.CapAdapt)=0
+.ic V(xneuron.vmem)=0 V(xneuron.xref.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap.CapAdapt)=0
 
 .control
 
 save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
-save V(ACK) V(REQ) V(xneuron.vmem) V(xneuron.xref_system.vref) V(xneuron.xadap_system.CapAdapt)
+save V(ACK) V(REQ) V(xneuron.vmem) V(xneuron.xref.vref) V(CapAdap)
 tran 50n 20m
 write neuron_tb.raw
 .endc
@@ -251,3 +251,4 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} -400 210 0 0 {name=l21 lab=GND}
+C {lab_pin.sym} 150 -30 3 0 {name=p11 sig_type=std_logic lab=CapAdap}
