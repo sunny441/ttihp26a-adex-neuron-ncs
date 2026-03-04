@@ -27,8 +27,12 @@ N 1110 -130 1180 -130 {lab=ACK}
 N 290 -130 340 -130 {lab=#net3}
 =======
 N 290 -130 340 -130 {lab=#net2}
+<<<<<<< HEAD
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 N -40 -130 -10 -130 {lab=vmem}
+=======
+N -40 -130 -10 -130 {lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N 400 -20 610 -20 {lab=GND}
 N 140 -20 400 -20 {lab=GND}
 <<<<<<< HEAD
@@ -77,6 +81,7 @@ N 100 380 400 380 {lab=GND}
 N 70 380 100 380 {lab=GND}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 N -40 230 250 230 {lab=Vmem}
 N -40 60 -40 230 {lab=Vmem}
 N 290 -300 290 -230 {lab=VDD}
@@ -90,6 +95,10 @@ N -80 160 720 160 {lab=REQ}
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 N -40 230 250 230 {lab=vmem}
 N -40 -130 -40 230 {lab=vmem}
+=======
+N -40 230 250 230 {lab=Vmem}
+N -40 60 -40 230 {lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N 290 -300 290 -230 {lab=VDD}
 N 140 -230 290 -230 {lab=VDD}
 N 70 380 70 460 {lab=GND}
@@ -112,6 +121,7 @@ N -550 210 -500 210 {lab=V_thrahp}
 N -550 160 -500 160 {lab=V_adapt}
 N -100 -130 -100 -110 {lab=Vmem}
 N -100 -130 -40 -130 {lab=Vmem}
+<<<<<<< HEAD
 N -100 -50 -100 380 {lab=GND}
 N -100 380 70 380 {lab=GND}
 N -210 -130 -100 -130 {lab=Vmem}
@@ -131,6 +141,11 @@ N -100 -50 -100 380 {lab=GND}
 N -100 380 70 380 {lab=GND}
 N -210 -130 -100 -130 {lab=vmem}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+N -100 -50 -100 380 {lab=GND}
+N -100 380 70 380 {lab=GND}
+N -210 -130 -100 -130 {lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N -350 380 -100 380 {lab=GND}
 N -360 -230 -130 -230 {lab=VDD}
 N -360 -230 -360 -180 {lab=VDD}
@@ -142,10 +157,14 @@ N -550 -130 -510 -130 {lab=V_th}
 N -510 -110 -510 -100 {lab=V_lk}
 N -550 -100 -510 -100 {lab=V_lk}
 <<<<<<< HEAD
+<<<<<<< HEAD
 N -10 -130 -10 -120 {lab=Vmem}
 =======
 N -10 -130 -10 -120 {lab=vmem}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+N -10 -130 -10 -120 {lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N 140 -60 140 -20 {lab=GND}
 N 100 -20 140 -20 {lab=GND}
 N -500 160 -500 190 {lab=V_adapt}
@@ -177,6 +196,7 @@ N -200 220 -200 240 {lab=REQ}
 N -350 280 -350 380 {lab=GND}
 N 400 320 400 380 {lab=GND}
 N 550 290 550 300 {lab=V_ref}
+<<<<<<< HEAD
 N 250 230 250 250 {lab=vmem}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -198,12 +218,17 @@ C {ADAP_system.sym} -350 210 0 0 {name=Xadap_system}
 C {REF_system.sym} 400 260 0 0 {name=Xref_system}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 =======
+=======
+N 250 230 250 250 {lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N -170 160 720 160 {lab=REQ}
 N -170 160 -170 170 {lab=REQ}
 N -200 170 -170 170 {lab=REQ}
 N -150 20 -150 190 {lab=I_in}
 N -200 190 -150 190 {lab=I_in}
-N -200 220 -170 220 {lab=REQ}
+N -200 220 -170 220 {lab=CapAdap}
+N -40 60 -20 60 {lab=Vmem}
+N -40 -130 -40 60 {lab=Vmem}
 C {inv.sym} 480 -130 0 0 {name=Xinv1}
 C {inv.sym} 690 -130 0 0 {name=Xinv2}
 C {DPI.sym} -360 -130 0 0 {name=Xdpi1}
@@ -243,6 +268,7 @@ footprint=1206
 device="ceramic capacitor"}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {opin.sym} -170 220 0 0 {name=p12 lab=CapAdap}
 C {opin.sym} -20 60 0 0 {name=p13 lab=Vmem}
 C {lab_wire.sym} 320 -130 0 0 {name=p14 sig_type=std_logic lab=Vfb}
@@ -256,3 +282,7 @@ C {lab_pin.sym} -40 30 0 1 {name=p13 sig_type=std_logic lab=vmem}
 =======
 C {opin.sym} -170 220 0 0 {name=p12 lab=CapAdap}
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
+=======
+C {opin.sym} -170 220 0 0 {name=p12 lab=CapAdap}
+C {opin.sym} -20 60 0 0 {name=p13 lab=Vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)

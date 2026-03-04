@@ -124,10 +124,13 @@ N 310 -130 310 -50 {lab=VDD}
 N 150 -130 310 -130 {lab=VDD}
 N 150 -130 150 -70 {lab=VDD}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 N 120 -50 190 -50 {lab=REQ}
 N 190 -50 190 -10 {lab=REQ}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 N 190 -10 250 -10 {lab=REQ}
 N 590 -10 590 110 {lab=ACK}
 N -220 110 590 110 {lab=ACK}
@@ -162,6 +165,7 @@ N 140 -30 140 90 {lab=GND}
 N -30 90 140 90 {lab=GND}
 =======
 N 120 90 310 90 {lab=GND}
+<<<<<<< HEAD
 N 120 -10 120 90 {lab=GND}
 N -30 90 120 90 {lab=GND}
 N 120 -30 150 -30 {lab=CapAdap}
@@ -172,6 +176,17 @@ N -530 -30 -530 -20 {lab=I_adapt}
 N -620 -20 -530 -20 {lab=I_adapt}
 N -530 -90 -530 -60 {lab=VDD}
 >>>>>>> 06a51e3 (connected bulk of pfet to VDD)
+=======
+N 120 -30 190 -30 {lab=REQ}
+N -530 -30 -530 -20 {lab=I_adapt}
+N -620 -20 -530 -20 {lab=I_adapt}
+N -530 -90 -530 -60 {lab=VDD}
+N 120 -50 170 -50 {lab=vmem}
+N 190 -30 190 -10 {lab=REQ}
+N 120 -10 150 -10 {lab=CapAdap}
+N 120 10 120 90 {lab=GND}
+N -30 90 120 90 {lab=GND}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 C {neuron.sym} -30 0 0 0 {name=Xneuron}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 C {simulator_commands_shown.sym} -240 -700 0 0 {name=example_Simulator1
@@ -207,7 +222,7 @@ tran 50n 10m
 .control
 
 save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
-save V(ACK) V(REQ) V(xneuron.vmem) V(xneuron.xref.vref) V(CapAdap)
+save V(ACK) V(REQ) V(vmem) V(xneuron.xref.vref) V(CapAdap)
 tran 50n 20m
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 write neuron_tb.raw
@@ -225,6 +240,7 @@ value="
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {isource.sym} 450 -340 0 0 {name=Ispkthr value=4n}
 C {gnd.sym} 450 -290 0 0 {name=l40 lab=GND}
 C {isource.sym} -140 -320 0 0 {name=Iin value="dc 0 ac 0 pulse(0 1n 100u 20n 20n 5m 5m)"
@@ -233,6 +249,9 @@ C {isource.sym} 450 -340 0 0 {name=Ispkthr value="dc 0 ac 0 pulse(0 4u 5m 20n 20
 =======
 C {isource.sym} 450 -340 0 0 {name=Ispkthr value=4u}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+C {isource.sym} 450 -340 0 0 {name=Ispkthr value=4n}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 C {gnd.sym} 450 -290 0 0 {name=l40 lab=GND}
 C {isource.sym} -140 -320 0 0 {name=Iin value="dc 0 ac 0 pulse(0 10n 100u 20n 20n 5m 5m)"
 >>>>>>> 236faf3 (added block schematics hierarchy)
@@ -257,8 +276,12 @@ C {isource.sym} 350 -320 0 0 {name=Iref value=50n}
 C {vsource.sym} -250 -350 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} -250 -240 0 0 {name=l7 lab=GND}
 C {vdd.sym} -250 -380 0 0 {name=l8 lab=VDD}
+<<<<<<< HEAD
 C {isource.sym} 350 -320 0 0 {name=Iref value=50u}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
+=======
+C {isource.sym} 350 -320 0 0 {name=Iref value=50n}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
 C {lab_pin.sym} 350 -270 0 0 {name=p1 sig_type=std_logic lab=Iref}
 C {vdd.sym} 350 -370 0 0 {name=l16 lab=VDD}
 C {vdd.sym} -140 -370 0 0 {name=l18 lab=VDD}
@@ -377,6 +400,7 @@ footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} -400 210 0 0 {name=l21 lab=GND}
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {lab_pin.sym} 150 -10 3 0 {name=p11 sig_type=std_logic lab=CapAdap}
 C {lab_pin.sym} 170 -50 2 0 {name=p12 sig_type=std_logic lab=vmem}
 =======
@@ -431,3 +455,7 @@ C {gnd.sym} -400 210 0 0 {name=l21 lab=GND}
 =======
 C {lab_pin.sym} 150 -30 3 0 {name=p11 sig_type=std_logic lab=CapAdap}
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
+=======
+C {lab_pin.sym} 150 -10 3 0 {name=p11 sig_type=std_logic lab=CapAdap}
+C {lab_pin.sym} 170 -50 2 0 {name=p12 sig_type=std_logic lab=vmem}
+>>>>>>> 9baf21a (added Vmem out pin in sch)
