@@ -1,61 +1,5 @@
-** sch_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/trimmer_test.sch
-**.subckt trimmer_test
-V1 VDD GND 1.8
-Ven CSen GND PWL(0n 0.0 1000n 0.0 1001n 1.8)
-Vb1 DB0 GND PWL(0n 0.0 2000n 0.0 2001n 1.8)
-Vb2 DB1 GND PWL(0n 0.0 3000n 0.0 3001n 1.8)
-Vb3 DB2 GND PWL(0n 0.0 4000n 0.0 4001n 1.8)
-Vb4 DB3 GND PWL(0n 0.0 5000n 0.0 5001n 1.8)
-x1 DB0 DB1 DB2 DB3 VDD GND CSen net2 trimmer
-R1 net1 GND 500
-Vmeas net2 net1 0
-.save i(vmeas)
-**** begin user architecture code
-
-
-.include trimmer.save
-.option savecurrent
-
-.param temp=27
-
-* Timing:
-* t=0-1µs  : Everything off
-* t=1-2µs  : Enable only (Ven high, all bits low)
-* t=2-3µs  : Bit 0 on
-* t=3-4µs  : Bit 1 on
-* t=4-5µs  : Bit 2 on
-* t=5-6µs  : Bit 3 on
-
-.control
-
-  save all
-  op
-
-  tran 1n 6u
-
-  write trimmer_test.raw
-
-  plot vmeas#branch
-
-.endc
-
-
-
-
-
-.lib cornerMOSlv.lib mos_tt
-.lib cornerMOShv.lib mos_tt
-.lib cornerHBT.lib hbt_typ
-.lib cornerRES.lib res_typ
-
-
-**** end user architecture code
-**.ends
-
-* expanding   symbol:  trimmer.sym # of pins=8
-** sym_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/trimmer.sym
 ** sch_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/trimmer.sch
-.subckt trimmer D0 D1 D2 D3 VDD VSS en out
+**.subckt trimmer D0 D1 D2 D3 VDD VSS en out
 *.ipin en
 *.ipin D0
 *.ipin D1
@@ -104,8 +48,7 @@ xinv7 VDD D1 net18 VSS inv
 xinv8 VDD D2 net21 VSS inv
 xinv9 VDD D3 net24 VSS inv
 xinv1 VDD net8 enMon VSS inv
-.ends
-
+**.ends
 
 * expanding   symbol:  inv.sym # of pins=4
 ** sym_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/inv.sym
@@ -119,6 +62,4 @@ XM1 out in VSS VSS sg13_lv_nmos w=1.2u l=0.28u ng=1
 XM2 out in VDD VDD sg13_lv_pmos w=2.4u l=0.28u ng=1
 .ends
 
-.GLOBAL GND
-.GLOBAL VDD
 .end
