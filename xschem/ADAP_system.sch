@@ -13,6 +13,7 @@ N -300 470 -300 490 {lab=CapAdap}
 N -320 570 -300 570 {lab=GND}
 N -300 550 -300 570 {lab=GND}
 N -840 320 -790 320 {lab=V_adapt}
+<<<<<<< HEAD
 N -750 130 -750 200 {lab=VDD}
 N -710 200 -670 200 {lab=REQ}
 N -750 350 -750 430 {lab=#net1}
@@ -47,6 +48,12 @@ N -750 430 -730 430 {lab=#net2}
 N -300 470 -190 470 {lab=CapAdapt}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 =======
+=======
+N -750 130 -750 200 {lab=VDD}
+N -710 200 -670 200 {lab=REQ}
+N -750 350 -750 430 {lab=#net1}
+N -750 430 -730 430 {lab=#net1}
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -300 470 -190 470 {lab=CapAdap}
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
 N -300 570 -150 570 {lab=GND}
@@ -55,10 +62,14 @@ N -150 370 -150 440 {lab=I_in}
 N -650 130 -580 130 {lab=VDD}
 N -650 100 -650 130 {lab=VDD}
 <<<<<<< HEAD
+<<<<<<< HEAD
 N -700 130 -650 130 {lab=VDD}
 =======
 N -750 130 -650 130 {lab=VDD}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+N -700 130 -650 130 {lab=VDD}
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -320 570 -320 610 {lab=GND}
 N -580 570 -320 570 {lab=GND}
 N -810 500 -730 500 {lab=V_lkahp}
@@ -67,15 +78,22 @@ N -580 520 -580 570 {lab=GND}
 N -580 130 -580 420 {lab=VDD}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -730 430 -730 450 {lab=#net1}
 N -730 490 -730 500 {lab=V_lkahp}
 N -300 310 -300 470 {lab=CapAdap}
 N -300 310 -160 310 {lab=CapAdap}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -750 230 -750 290 {lab=#net2}
 N -750 320 -700 320 {lab=VDD}
 N -700 130 -700 320 {lab=VDD}
 N -750 130 -700 130 {lab=VDD}
+<<<<<<< HEAD
 =======
 N -730 430 -730 450 {lab=#net3}
 =======
@@ -85,6 +103,8 @@ N -730 490 -730 500 {lab=V_lkahp}
 >>>>>>> 236faf3 (added block schematics hierarchy)
 =======
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
+=======
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 C {sg13g2_pr/sg13_hv_pmos.sym} -730 200 0 1 {name=M19
 l=0.5u
 w=1u

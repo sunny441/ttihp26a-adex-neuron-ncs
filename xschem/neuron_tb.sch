@@ -40,9 +40,12 @@ N -530 -150 -530 -110 {lab=GND}
 N -530 -110 -490 -110 {lab=GND}
 N -620 -180 -450 -180 {lab=Iref}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 N -530 -60 -530 -20 {lab=I_adapt}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -530 40 -530 90 {lab=GND}
 N -530 90 -470 90 {lab=GND}
 N -600 10 -450 10 {lab=I_thrahp}
@@ -73,9 +76,12 @@ N -450 -180 -450 -150 {lab=Iref}
 N -490 -150 -450 -150 {lab=Iref}
 N -640 -90 -530 -90 {lab=VDD}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 N -620 -20 -530 -20 {lab=I_adapt}
 >>>>>>> 236faf3 (added block schematics hierarchy)
+=======
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 N -530 -20 -460 -20 {lab=I_adapt}
 N -460 -60 -460 -20 {lab=I_adapt}
 N -490 -60 -460 -60 {lab=I_adapt}
@@ -159,7 +165,13 @@ N 120 90 310 90 {lab=GND}
 N 120 -10 120 90 {lab=GND}
 N -30 90 120 90 {lab=GND}
 N 120 -30 150 -30 {lab=CapAdap}
+<<<<<<< HEAD
 >>>>>>> fbcfbae (added adaptation capacitor probing path in testbench)
+=======
+N -530 -30 -530 -20 {lab=I_adapt}
+N -620 -20 -530 -20 {lab=I_adapt}
+N -530 -90 -530 -60 {lab=VDD}
+>>>>>>> 06a51e3 (connected bulk of pfet to VDD)
 C {neuron.sym} -30 0 0 0 {name=Xneuron}
 >>>>>>> 7d1c67b (increased ng to diff pair and analog trans - Renamed X-instances - Took in the tb the ACK signal)
 C {simulator_commands_shown.sym} -240 -700 0 0 {name=example_Simulator1
