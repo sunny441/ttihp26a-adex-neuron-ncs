@@ -22,7 +22,7 @@ C {sg13g2_pr/sg13_hv_pmos.sym} -20 -10 0 0 {name=M13
 l=1u
 w=4u
 ng=1
-m=4
+m=3
 model=sg13_hv_pmos
 spiceprefix=X
 }
