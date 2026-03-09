@@ -9,6 +9,7 @@ S {}
 F {}
 E {}
 <<<<<<< HEAD
+<<<<<<< HEAD
 L 4 130 0 150 0 {}
 L 7 0 40 0 60 {}
 L 7 -150 0 -130 0 {}
@@ -23,11 +24,14 @@ B 5 27.5 57.5 32.5 62.5 {name=nwell dir=inout}
 B 5 57.5 57.5 62.5 62.5 {name=psub dir=inout}
 =======
 L 4 130 -10 150 -10 {}
+=======
+L 4 130 0 150 0 {}
+>>>>>>> d81e89c (modified sizings in DPI and FB_system, added schematic and symbol for neuron with no adaptation block and its corresponding testbench)
 L 7 0 40 0 60 {}
 L 7 -150 0 -130 0 {}
 L 7 0 -60 0 -40 {}
 B 5 -2.5 -62.5 2.5 -57.5 {name=VDD dir=inout}
-B 5 147.5 -12.5 152.5 -7.5 {name=out dir=out}
+B 5 147.5 -2.5 152.5 2.5 {name=out dir=out}
 B 5 -152.5 -2.5 -147.5 2.5 {name=V_mem dir=inout}
 B 5 -2.5 57.5 2.5 62.5 {name=GND dir=inout}
 >>>>>>> 236faf3 (added block schematics hierarchy)
@@ -36,6 +40,7 @@ T {@symname} -58.5 -6 0 0 0.3 0.3 {}
 T {@name} 135 -52 0 0 0.2 0.2 {}
 T {VDD} 5 -34 0 1 0.2 0.2 {}
 <<<<<<< HEAD
+<<<<<<< HEAD
 T {out} 125 -4 0 1 0.2 0.2 {}
 T {V_mem} -85 -4 0 1 0.2 0.2 {}
 T {GND} 15 26 0 1 0.2 0.2 {}
@@ -43,6 +48,9 @@ T {nwell} 45 26 0 1 0.2 0.2 {}
 T {psub} 75 26 0 1 0.2 0.2 {}
 =======
 T {out} 125 -14 0 1 0.2 0.2 {}
+=======
+T {out} 125 -4 0 1 0.2 0.2 {}
+>>>>>>> d81e89c (modified sizings in DPI and FB_system, added schematic and symbol for neuron with no adaptation block and its corresponding testbench)
 T {V_mem} -85 -4 0 1 0.2 0.2 {}
 T {GND} 15 26 0 1 0.2 0.2 {}
 >>>>>>> 236faf3 (added block schematics hierarchy)
