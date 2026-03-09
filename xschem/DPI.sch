@@ -8,7 +8,6 @@ E {}
 N 350 -310 350 -290 {lab=I_in}
 N 540 -310 540 -290 {lab=I_in}
 N 450 -310 540 -310 {lab=I_in}
-N 540 -230 540 -160 {lab=V_mem}
 N 580 -260 580 -230 {lab=V_mem}
 N 540 -230 580 -230 {lab=V_mem}
 N 350 -310 450 -310 {lab=I_in}
@@ -24,24 +23,25 @@ N 460 -280 460 -260 {lab=VDD}
 N 350 -260 460 -260 {lab=VDD}
 N 445 -70 445 -45 {lab=GND}
 N 350 -70 445 -70 {lab=GND}
+N 540 -230 540 -220 {lab=V_mem}
 C {sg13g2_pr/sg13_hv_pmos.sym} 330 -260 0 0 {name=Mdifl
-l=8u
+l=2u
 w=4u
-ng=4
-m=4
+ng=2
+m=8
 model=sg13_hv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_pmos.sym} 560 -260 0 1 {name=Mdifr
-l=8u
+l=2u
 w=4u
-ng=4
-m=4
+ng=2
+m=8
 model=sg13_hv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_nmos.sym} 560 -130 0 1 {name=Mtau
-l=10u
+l=4u
 w=4u
 ng=2
 m=4
@@ -54,3 +54,4 @@ C {ipin.sym} 270 -260 0 0 {name=p3 lab=V_th}
 C {ipin.sym} 450 -360 0 1 {name=p4 lab=I_in}
 C {iopin.sym} 460 -280 0 1 {name=p5 lab=VDD}
 C {iopin.sym} 445 -45 0 0 {name=p6 lab=GND}
+C {ammeter.sym} 540 -190 0 0 {name=Vilk savecurrent=true spice_ignore=0}
