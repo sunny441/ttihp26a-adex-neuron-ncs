@@ -41,9 +41,14 @@ C {iopin.sym} 20 -160 0 0 {name=p1 lab=VDD}
 C {iopin.sym} 20 170 0 0 {name=p3 lab=VSS}
 C {opin.sym} 90 0 0 0 {name=p4 lab=out}
 C {sg13g2_pr/sg13_lv_pmos.sym} 0 -80 0 0 {name=M3
+<<<<<<< HEAD
 l=1u
 w=0.15u
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
+=======
+l=0.15u
+w=1u
+>>>>>>> 932c286 (working schematic)
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -51,12 +56,17 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 0 90 0 0 {name=M4
 <<<<<<< HEAD
+<<<<<<< HEAD
 l=0.15u
 w=1u
 =======
 l=1u
 w=0.15u
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
+=======
+l=0.15u
+w=1u
+>>>>>>> 932c286 (working schematic)
 ng=1
 m=1
 model=sg13_lv_nmos

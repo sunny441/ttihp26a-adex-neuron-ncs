@@ -5,6 +5,7 @@ V {}
 S {}
 F {}
 E {}
+<<<<<<< HEAD
 B 2 70 -430 870 -30 {flags=graph
 y1=0
 y2=1.5
@@ -78,6 +79,29 @@ N 840 365 880 365 {lab=out}
 N 880 270 880 365 {lab=out}
 N 880 270 920 270 {lab=out}
 N 880 160 880 270 {lab=out}
+=======
+N 100 -190 100 -110 {lab=GND}
+N 260 120 260 140 {lab=VDD}
+N 230 -190 230 -110 {lab=GND}
+N 230 -280 230 -250 {lab=S0}
+N 580 -250 580 -220 {lab=in0}
+N 580 -160 580 -90 {lab=GND}
+N 155 190 190 190 {lab=in0}
+N 155 225 175 225 {lab=S0}
+N 690 190 825 190 {lab=out}
+N 680 -245 680 -215 {lab=in1}
+N 680 -155 680 -85 {lab=GND}
+N 285 -95 285 -15 {lab=GND}
+N 285 -185 285 -155 {lab=S1}
+N 155 395 190 395 {lab=in1}
+N 155 430 175 430 {lab=S1}
+N 330 190 690 190 {lab=out}
+N 260 335 260 345 {lab=VDD}
+N 690 190 690 395 {lab=out}
+N 330 395 690 395 {lab=out}
+N 260 445 260 460 {lab=GND}
+N 260 240 260 260 {lab=GND}
+>>>>>>> 932c286 (working schematic)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -85,6 +109,7 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt"
 }
+<<<<<<< HEAD
 C {vsource.sym} 60 205 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 60 315 0 0 {name=l7 lab=GND}
 C {vdd.sym} 60 175 0 0 {name=l8 lab=VDD}
@@ -154,3 +179,61 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 xschem netlist
 simulate
 "}
+=======
+C {vsource.sym} 100 -220 0 0 {name=VDD1 value=1.2 savecurrent=false}
+C {gnd.sym} 100 -110 0 0 {name=l7 lab=GND}
+C {vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
+C {vdd.sym} 260 120 0 0 {name=l1 lab=VDD}
+C {vsource.sym} 580 -190 0 0 {name=VIN0 value=1.0 savecurrent=true}
+C {vsource.sym} 230 -220 0 0 {name=Vsel value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
+C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
+C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=S0}
+C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
+simulator=ngspice
+only_toplevel=false 
+value="
+.include mux2I1.save
+.include mux_tb.save
+.param temp 27
+
+* Select toggles
+VSEL sel GND PULSE(0 1.2 10u 1n 1n 10u 20u)
+
+* Analog input 0
+VIN0 in0 GND SIN(0.6 0.2 20k)
+
+* Analog input 1
+VIN1 in1 GND PWL(0u 0.2 10u 0.8 20u 0.4 30u 1.0 40u 0.5)
+
+XMU VDD VSS sel in0 out in1 mux2I1
+
+.control
+op
+save v(sel) v(in0) v(in1) v(out)
+tran 1n 40u
+plot v(in0) v(in1) v(out) v(sel)
+write mux_tb.raw
+.endc
+
+"}
+C {lab_pin.sym} 825 190 0 1 {name=p2 sig_type=std_logic lab=out}
+C {lab_pin.sym} 580 -250 2 1 {name=p3 sig_type=std_logic lab=in0}
+C {gnd.sym} 580 -90 0 0 {name=l4 lab=GND}
+C {lab_pin.sym} 155 190 2 1 {name=p5 sig_type=std_logic lab=in0}
+C {gnd.sym} 260 260 0 0 {name=l2 lab=GND}
+C {lab_pin.sym} 155 225 2 1 {name=p7 sig_type=std_logic lab=S0}
+C {tg_lv.sym} 255 195 0 0 {name=x1}
+C {vsource.sym} 680 -185 0 0 {name=VIN1 value=1.0 savecurrent=true}
+C {lab_pin.sym} 680 -245 2 1 {name=p1 sig_type=std_logic lab=in1}
+C {gnd.sym} 680 -85 0 0 {name=l5 lab=GND}
+C {vsource.sym} 285 -125 0 0 {name=Vsel1 value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
+C {gnd.sym} 285 -15 0 0 {name=l6 lab=GND}
+C {lab_pin.sym} 285 -185 2 1 {name=p4 sig_type=std_logic lab=S1}
+C {tg_lv.sym} 255 400 0 0 {name=x2}
+C {lab_pin.sym} 155 395 2 1 {name=p6 sig_type=std_logic lab=in1
+}
+C {lab_pin.sym} 155 430 2 1 {name=p8 sig_type=std_logic lab=S1
+}
+C {vdd.sym} 260 335 0 0 {name=l9 lab=VDD}
+C {gnd.sym} 260 460 0 0 {name=l10 lab=GND}
+>>>>>>> 932c286 (working schematic)

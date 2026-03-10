@@ -6,6 +6,9 @@ S {}
 F {}
 E {}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 932c286 (working schematic)
 B 2 80 -440 880 -40 {flags=graph
 y1=0
 y2=1.5
@@ -63,6 +66,7 @@ N 240 50 240 80 {lab=in0}
 N 240 140 240 210 {lab=GND}
 N 745 110 780 110 {lab=in0}
 N 745 145 765 145 {lab=sel}
+<<<<<<< HEAD
 N 920 110 1020 110 {lab=out}
 N 850 160 850 250 {lab=GND}
 =======
@@ -91,6 +95,14 @@ N 350 190 420 190 {lab=out}
 N 260 240 260 330 {lab=GND}
 N 260 330 350 330 {lab=GND}
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
+=======
+N 850 220 850 250 {lab=GND}
+N 920 110 1020 110 {lab=out}
+N 1020 110 1020 130 {lab=out}
+N 1020 190 1020 220 {lab=GND}
+N 850 220 1020 220 {lab=GND}
+N 850 160 850 220 {lab=GND}
+>>>>>>> 932c286 (working schematic)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -99,16 +111,24 @@ value="
 .lib cornerMOShv.lib mos_tt"
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 932c286 (working schematic)
 C {vsource.sym} 90 100 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 90 210 0 0 {name=l7 lab=GND}
 C {vdd.sym} 90 70 0 0 {name=l8 lab=VDD}
 C {vdd.sym} 850 40 0 0 {name=l1 lab=VDD}
+<<<<<<< HEAD
 C {vsource.sym} 240 110 0 0 {name=VIN0 value="SIN(0.2 0.2 10k)"}
+=======
+C {vsource.sym} 240 110 0 0 {name=VIN0 value="SIN(0.6 0.3 10k)"}
+>>>>>>> 932c286 (working schematic)
 C {vsource.sym} 440 90 0 0 {name=Vsel value="PULSE(0 1.2 100u 1n 1n 600u 800u)"
 }
 C {gnd.sym} 440 200 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 440 30 2 1 {name=p9 sig_type=std_logic lab=sel}
 C {simulator_commands_shown.sym} -270 10 0 0 {name=TB_Simulator
+<<<<<<< HEAD
 simulator=ngspice
 only_toplevel=false 
 value="
@@ -170,38 +190,63 @@ C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=sel}
 C {lab_pin.sym} 220 380 1 1 {name=p1 sig_type=std_logic lab=sel}
 C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
+=======
+>>>>>>> 932c286 (working schematic)
 simulator=ngspice
 only_toplevel=false 
 value="
-.include mux2I1.save
-.include mux_tb.save
+.include tg1_tb.save
 .param temp 27
-
-* Select toggles
-VSEL sel GND PULSE(0 1.2 10u 1n 1n 10u 20u)
-
-* Analog input 0
-VIN0 in0 GND SIN(0.6 0.2 20k)
-
-* Analog input 1
-VIN1 in1 GND PWL(0u 0.2 10u 0.8 20u 0.4 30u 1.0 40u 0.5)
-
-XMU VDD VSS sel in0 out in1 mux2I1
 
 .control
 op
-save v(sel) v(in0) v(in1) v(out)
-tran 1n 40u
-plot v(in0) v(in1) v(out) v(sel)
-write mux_tb.raw
+write tg1_tb.raw
+save v(sel) v(in0) v(out)
+tran 1u 800u
+write tg1_tb.raw
 .endc
-
 "}
-C {res.sym} 420 230 0 0 {name=RLOAD
+C {lab_pin.sym} 1020 110 0 1 {name=p2 sig_type=std_logic lab=out}
+C {lab_pin.sym} 240 50 2 1 {name=p3 sig_type=std_logic lab=in0}
+C {gnd.sym} 240 210 0 0 {name=l4 lab=GND}
+C {lab_pin.sym} 745 110 2 1 {name=p5 sig_type=std_logic lab=in0}
+C {gnd.sym} 850 250 0 0 {name=l2 lab=GND}
+C {lab_pin.sym} 745 145 2 1 {name=p7 sig_type=std_logic lab=sel}
+C {tg_lv.sym} 845 115 0 0 {name=x1}
+C {launcher.sym} -220 -90 0 0 {name=h5
+descr="load waves"
+tclcommand="xschem raw_read $netlist_dir/tg1_tb.raw tran"
+}
+C {launcher.sym} -210 -140 0 0 {name=h4
+descr=SimulateNGSPICE
+tclcommand="
+# Setup the default simulation commands if not already set up
+# for example by already launched simulations.
+set_sim_defaults
+puts $sim(spice,1,cmd) 
+
+# Change the Xyce command. In the spice category there are currently
+# 5 commands (0, 1, 2, 3, 4). Command 3 is the Xyce batch
+# you can get the number by querying $sim(spice,n)
+set sim(spice,1,cmd) \{ngspice  \\"$N\\" -a\}
+
+# change the simulator to be used (Xyce)
+set sim(spice,default) 0
+
+# Create FET and BIP .save file
+mkdir -p $netlist_dir
+write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get current_name]]].save
+
+# run netlist and simulation
+xschem netlist
+simulate
+"}
+C {res.sym} 1020 160 0 0 {name=R1
 value=1G
 footprint=1206
 device=resistor
 m=1}
+<<<<<<< HEAD
 C {capa.sym} 350 230 0 0 {name=CLOAD
 m=1
 value=2p
@@ -222,3 +267,5 @@ C {lab_pin.sym} 260 -60 2 1 {name=p7 sig_type=std_logic lab=sel}
 C {lab_pin.sym} 510 -60 0 1 {name=p8 sig_type=std_logic lab=selB}
 C {lab_pin.sym} 240 370 1 1 {name=p10 sig_type=std_logic lab=selB}
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
+=======
+>>>>>>> 932c286 (working schematic)
