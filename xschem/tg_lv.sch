@@ -96,6 +96,7 @@ C {lab_pin.sym} -330 -430 0 0 {name=p14 sig_type=std_logic lab=sel}
 C {lab_pin.sym} -20 -660 0 0 {name=p15 sig_type=std_logic lab=selbar}
 C {sg13g2_pr/sg13_lv_nmos.sym} 40 -410 3 0 {name=M3
 l=0.15u
+<<<<<<< HEAD
 w=4u
 ng=4
 <<<<<<< HEAD
@@ -104,6 +105,11 @@ m=1
 =======
 m=2
 >>>>>>> 932c286 (working schematic)
+=======
+w=8u
+ng=8
+m=1
+>>>>>>> 3719ff7 (added TG testbenches)
 model=sg13_lv_nmos
 spiceprefix=X
 }

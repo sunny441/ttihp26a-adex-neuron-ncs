@@ -67,6 +67,7 @@ N 240 140 240 210 {lab=GND}
 N 745 110 780 110 {lab=in0}
 N 745 145 765 145 {lab=sel}
 <<<<<<< HEAD
+<<<<<<< HEAD
 N 920 110 1020 110 {lab=out}
 N 850 160 850 250 {lab=GND}
 =======
@@ -103,6 +104,10 @@ N 1020 190 1020 220 {lab=GND}
 N 850 220 1020 220 {lab=GND}
 N 850 160 850 220 {lab=GND}
 >>>>>>> 932c286 (working schematic)
+=======
+N 920 110 1020 110 {lab=out}
+N 850 160 850 250 {lab=GND}
+>>>>>>> 3719ff7 (added TG testbenches)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -119,10 +124,14 @@ C {gnd.sym} 90 210 0 0 {name=l7 lab=GND}
 C {vdd.sym} 90 70 0 0 {name=l8 lab=VDD}
 C {vdd.sym} 850 40 0 0 {name=l1 lab=VDD}
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {vsource.sym} 240 110 0 0 {name=VIN0 value="SIN(0.2 0.2 10k)"}
 =======
 C {vsource.sym} 240 110 0 0 {name=VIN0 value="SIN(0.6 0.3 10k)"}
 >>>>>>> 932c286 (working schematic)
+=======
+C {vsource.sym} 240 110 0 0 {name=VIN0 value="SIN(0.2 0.2 10k)"}
+>>>>>>> 3719ff7 (added TG testbenches)
 C {vsource.sym} 440 90 0 0 {name=Vsel value="PULSE(0 1.2 100u 1n 1n 600u 800u)"
 }
 C {gnd.sym} 440 200 0 0 {name=l3 lab=GND}
@@ -195,13 +204,12 @@ C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
 simulator=ngspice
 only_toplevel=false 
 value="
-.include tg1_tb.save
 .param temp 27
 
 .control
 op
 write tg1_tb.raw
-save v(sel) v(in0) v(out)
+save v(sel) v(in0) v(out) v(out)-v(in0)
 tran 1u 800u
 write tg1_tb.raw
 .endc
@@ -241,6 +249,7 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 xschem netlist
 simulate
 "}
+<<<<<<< HEAD
 C {res.sym} 1020 160 0 0 {name=R1
 value=1G
 footprint=1206
@@ -269,3 +278,5 @@ C {lab_pin.sym} 240 370 1 1 {name=p10 sig_type=std_logic lab=selB}
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
 =======
 >>>>>>> 932c286 (working schematic)
+=======
+>>>>>>> 3719ff7 (added TG testbenches)

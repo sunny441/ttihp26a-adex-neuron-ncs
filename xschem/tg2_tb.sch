@@ -6,6 +6,9 @@ S {}
 F {}
 E {}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3719ff7 (added TG testbenches)
 B 2 70 -430 870 -30 {flags=graph
 y1=0
 y2=1.5
@@ -79,6 +82,7 @@ N 840 365 880 365 {lab=out}
 N 880 270 880 365 {lab=out}
 N 880 270 920 270 {lab=out}
 N 880 160 880 270 {lab=out}
+<<<<<<< HEAD
 =======
 N 100 -190 100 -110 {lab=GND}
 N 260 120 260 140 {lab=VDD}
@@ -102,6 +106,8 @@ N 330 395 690 395 {lab=out}
 N 260 445 260 460 {lab=GND}
 N 260 240 260 260 {lab=GND}
 >>>>>>> 932c286 (working schematic)
+=======
+>>>>>>> 3719ff7 (added TG testbenches)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -110,6 +116,9 @@ value="
 .lib cornerMOShv.lib mos_tt"
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3719ff7 (added TG testbenches)
 C {vsource.sym} 60 205 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 60 315 0 0 {name=l7 lab=GND}
 C {vdd.sym} 60 175 0 0 {name=l8 lab=VDD}
@@ -139,6 +148,7 @@ C {lab_pin.sym} 665 400 2 1 {name=p8 sig_type=std_logic lab=S1
 C {vdd.sym} 770 305 0 0 {name=l9 lab=VDD}
 C {gnd.sym} 770 430 0 0 {name=l10 lab=GND}
 C {simulator_commands_shown.sym} -420 190 0 0 {name=TB_Simulator
+<<<<<<< HEAD
 simulator=ngspice
 only_toplevel=false 
 value="
@@ -189,51 +199,53 @@ C {vsource.sym} 230 -220 0 0 {name=Vsel value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
 C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=S0}
 C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
+=======
+>>>>>>> 3719ff7 (added TG testbenches)
 simulator=ngspice
 only_toplevel=false 
 value="
-.include mux2I1.save
-.include mux_tb.save
 .param temp 27
-
-* Select toggles
-VSEL sel GND PULSE(0 1.2 10u 1n 1n 10u 20u)
-
-* Analog input 0
-VIN0 in0 GND SIN(0.6 0.2 20k)
-
-* Analog input 1
-VIN1 in1 GND PWL(0u 0.2 10u 0.8 20u 0.4 30u 1.0 40u 0.5)
-
-XMU VDD VSS sel in0 out in1 mux2I1
-
 .control
 op
-save v(sel) v(in0) v(in1) v(out)
-tran 1n 40u
-plot v(in0) v(in1) v(out) v(sel)
-write mux_tb.raw
+write tg2_tb.raw
+save v(S0) v(S1) v(in0) v(in1) v(out)
+tran 1u 800u
+write tg2_tb.raw
 .endc
-
 "}
-C {lab_pin.sym} 825 190 0 1 {name=p2 sig_type=std_logic lab=out}
-C {lab_pin.sym} 580 -250 2 1 {name=p3 sig_type=std_logic lab=in0}
-C {gnd.sym} 580 -90 0 0 {name=l4 lab=GND}
-C {lab_pin.sym} 155 190 2 1 {name=p5 sig_type=std_logic lab=in0}
-C {gnd.sym} 260 260 0 0 {name=l2 lab=GND}
-C {lab_pin.sym} 155 225 2 1 {name=p7 sig_type=std_logic lab=S0}
-C {tg_lv.sym} 255 195 0 0 {name=x1}
-C {vsource.sym} 680 -185 0 0 {name=VIN1 value=1.0 savecurrent=true}
-C {lab_pin.sym} 680 -245 2 1 {name=p1 sig_type=std_logic lab=in1}
-C {gnd.sym} 680 -85 0 0 {name=l5 lab=GND}
-C {vsource.sym} 285 -125 0 0 {name=Vsel1 value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
-C {gnd.sym} 285 -15 0 0 {name=l6 lab=GND}
-C {lab_pin.sym} 285 -185 2 1 {name=p4 sig_type=std_logic lab=S1}
-C {tg_lv.sym} 255 400 0 0 {name=x2}
-C {lab_pin.sym} 155 395 2 1 {name=p6 sig_type=std_logic lab=in1
+C {launcher.sym} -370 90 0 0 {name=h5
+descr="load waves"
+tclcommand="xschem raw_read $netlist_dir/tg1_tb.raw tran"
 }
+<<<<<<< HEAD
 C {lab_pin.sym} 155 430 2 1 {name=p8 sig_type=std_logic lab=S1
 }
 C {vdd.sym} 260 335 0 0 {name=l9 lab=VDD}
 C {gnd.sym} 260 460 0 0 {name=l10 lab=GND}
 >>>>>>> 932c286 (working schematic)
+=======
+C {launcher.sym} -360 40 0 0 {name=h4
+descr=SimulateNGSPICE
+tclcommand="
+# Setup the default simulation commands if not already set up
+# for example by already launched simulations.
+set_sim_defaults
+puts $sim(spice,1,cmd) 
+
+# Change the Xyce command. In the spice category there are currently
+# 5 commands (0, 1, 2, 3, 4). Command 3 is the Xyce batch
+# you can get the number by querying $sim(spice,n)
+set sim(spice,1,cmd) \{ngspice  \\"$N\\" -a\}
+
+# change the simulator to be used (Xyce)
+set sim(spice,default) 0
+
+# Create FET and BIP .save file
+mkdir -p $netlist_dir
+write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get current_name]]].save
+
+# run netlist and simulation
+xschem netlist
+simulate
+"}
+>>>>>>> 3719ff7 (added TG testbenches)
