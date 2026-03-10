@@ -11,6 +11,7 @@ N 20 0 90 0 {lab=out}
 N 20 -50 20 0 {lab=out}
 N -70 0 -20 0 {lab=in}
 N -20 -80 -20 0 {lab=in}
+<<<<<<< HEAD
 N -160 -190 -130 -190 {lab=VDD}
 N -160 -150 -130 -150 {lab=VSS}
 N 210 60 250 60 {lab=VSS}
@@ -32,19 +33,36 @@ C {opin.sym} 90 0 0 0 {name=p4 lab=out}
 C {sg13g2_pr/sg13_lv_pmos.sym} 0 -80 0 0 {name=M3
 l=0.15u
 w=1u
+=======
+N 20 90 20 170 {lab=VSS}
+N 20 -160 20 -80 {lab=VDD}
+C {ipin.sym} -70 0 0 0 {name=p2 lab=in}
+C {iopin.sym} 20 -160 0 0 {name=p1 lab=VDD}
+C {iopin.sym} 20 170 0 0 {name=p3 lab=VSS}
+C {opin.sym} 90 0 0 0 {name=p4 lab=out}
+C {sg13g2_pr/sg13_lv_pmos.sym} 0 -80 0 0 {name=M3
+l=1u
+w=0.15u
+>>>>>>> b8b78d7 (Added TG sschematics and symbols)
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 0 90 0 0 {name=M4
+<<<<<<< HEAD
 l=0.15u
 w=1u
+=======
+l=1u
+w=0.15u
+>>>>>>> b8b78d7 (Added TG sschematics and symbols)
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
+<<<<<<< HEAD
 C {sg13g2_pr/sg13_lv_pmos.sym} 220 -90 0 0 {name=Mdumm1
 l=0.15u
 w=1u
@@ -73,3 +91,5 @@ C {lab_pin.sym} 90 -80 2 0 {name=p11 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 90 90 2 0 {name=p12 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 290 -90 2 0 {name=p17 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 300 90 2 0 {name=p18 sig_type=std_logic lab=VSS}
+=======
+>>>>>>> b8b78d7 (Added TG sschematics and symbols)
