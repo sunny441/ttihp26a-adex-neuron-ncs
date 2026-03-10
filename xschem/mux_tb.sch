@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 v {xschem version=3.4.8RC file_version=1.3}
+=======
+v {xschem version=3.4.7 file_version=1.2}
+>>>>>>> 0d75509 (Added Mux Schematic and testbench init)
 G {}
 K {}
 V {}
 S {}
+<<<<<<< HEAD
 F {}
 E {}
 B 2 70 -430 870 -30 {flags=graph
@@ -72,6 +77,24 @@ N 780 280 780 330 {lab=S1}
 N 880 280 880 300 {lab=GND}
 N 880 140 880 160 {lab=VDD}
 N 1030 220 1050 220 {lab=out}
+=======
+E {}
+N 100 -190 100 -110 {lab=GND}
+N 230 140 230 240 {lab=GND}
+N 230 -10 230 10 {lab=VDD}
+N 30 50 170 50 {lab=#net1}
+N 90 70 170 70 {lab=#net2}
+N 30 110 30 240 {lab=GND}
+N 230 240 390 240 {lab=GND}
+N 390 140 390 240 {lab=GND}
+N 390 70 390 80 {lab=#net3}
+N 270 70 390 70 {lab=#net3}
+N 90 240 230 240 {lab=GND}
+N 90 130 90 240 {lab=GND}
+N 30 240 90 240 {lab=GND}
+N 230 -190 230 -110 {lab=GND}
+N 230 -280 230 -250 {lab=sel}
+>>>>>>> 0d75509 (Added Mux Schematic and testbench init)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -79,6 +102,7 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt"
 }
+<<<<<<< HEAD
 C {vsource.sym} 60 205 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 60 315 0 0 {name=l7 lab=GND}
 C {vdd.sym} 60 175 0 0 {name=l8 lab=VDD}
@@ -145,3 +169,35 @@ simulate
 "}
 C {mux21.sym} 880 220 0 0 {name=x1}
 C {lab_pin.sym} 1050 220 0 1 {name=p10 sig_type=std_logic lab=out}
+=======
+C {vsource.sym} 100 -220 0 0 {name=VDD1 value=1.2 savecurrent=false}
+C {gnd.sym} 100 -110 0 0 {name=l7 lab=GND}
+C {vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
+C {mux2I1.sym} 210 100 0 0 {name=x1}
+C {vdd.sym} 230 -10 0 0 {name=l1 lab=VDD}
+C {gnd.sym} 230 240 0 0 {name=l2 lab=GND}
+C {vsource.sym} 30 80 0 0 {name=IN0 value=1.0 savecurrent=true}
+C {vsource.sym} 90 100 0 0 {name=IN1 value=0.5 savecurrent=true}
+C {vsource.sym} 390 110 0 0 {name=OUT value=0 savecurrent=true}
+C {vsource.sym} 230 -220 0 0 {name=sel value=1.2 savecurrent=false}
+C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
+C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=sel}
+C {lab_pin.sym} 170 110 2 1 {name=p1 sig_type=std_logic lab=sel}
+C {simulator_commands_shown.sym} -900 30 0 0 {name=example_Simulator1
+simulator=ngspice
+only_toplevel=false 
+value="
+.param temp=27
+
+.ic V(xneuron.vmem)=0 V(xneuron.xref.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap.CapAdapt)=0
+
+.control
+
+save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
+save V(ACK) V(REQ) V(vmem) V(xneuron.xref.vref) V(CapAdap)
+tran 50n 20m
+write neuron_tb.raw
+.endc
+
+"}
+>>>>>>> 0d75509 (Added Mux Schematic and testbench init)
