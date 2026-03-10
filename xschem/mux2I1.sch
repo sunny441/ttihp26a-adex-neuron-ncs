@@ -47,8 +47,8 @@ C {iopin.sym} -430 -640 2 0 {name=p3 lab=VSS}
 C {opin.sym} 230 -350 0 0 {name=p4 lab=out}
 C {sg13g2_pr/sg13_hv_pmos.sym} 40 -640 1 0 {name=M1
 l=0.5u
-w=4u
-ng=4
+w=16u
+ng=16
 m=1
 model=sg13_hv_pmos
 spiceprefix=X
@@ -73,8 +73,8 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_pmos.sym} 40 -330 1 0 {name=M4
 l=0.5u
-w=4u
-ng=4
+w=16u
+ng=16
 m=1
 model=sg13_hv_pmos
 spiceprefix=X

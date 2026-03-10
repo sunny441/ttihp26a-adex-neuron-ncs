@@ -82,19 +82,27 @@ E {}
 N 100 -190 100 -110 {lab=GND}
 N 230 140 230 240 {lab=GND}
 N 230 -10 230 10 {lab=VDD}
-N 30 50 170 50 {lab=#net1}
-N 90 70 170 70 {lab=#net2}
-N 30 110 30 240 {lab=GND}
-N 230 240 390 240 {lab=GND}
-N 390 140 390 240 {lab=GND}
-N 390 70 390 80 {lab=#net3}
-N 270 70 390 70 {lab=#net3}
-N 90 240 230 240 {lab=GND}
-N 90 130 90 240 {lab=GND}
-N 30 240 90 240 {lab=GND}
+N 330 240 400 240 {lab=GND}
+N 330 70 400 70 {lab=out}
 N 230 -190 230 -110 {lab=GND}
 N 230 -280 230 -250 {lab=sel}
+<<<<<<< HEAD
 >>>>>>> 0d75509 (Added Mux Schematic and testbench init)
+=======
+N 400 170 400 240 {lab=GND}
+N 330 170 330 240 {lab=GND}
+N 230 240 330 240 {lab=GND}
+N 330 70 330 110 {lab=out}
+N 270 70 330 70 {lab=out}
+N 400 70 400 110 {lab=out}
+N 400 70 460 70 {lab=out}
+N 350 -270 350 -240 {lab=in0}
+N 350 -180 350 -110 {lab=GND}
+N 430 -270 430 -240 {lab=in1}
+N 430 -180 430 -110 {lab=GND}
+N 140 50 170 50 {lab=in0}
+N 90 70 170 70 {lab=in1}
+>>>>>>> 528cb96 (minor updates to the tb of mux)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -176,10 +184,9 @@ C {vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
 C {mux2I1.sym} 210 100 0 0 {name=x1}
 C {vdd.sym} 230 -10 0 0 {name=l1 lab=VDD}
 C {gnd.sym} 230 240 0 0 {name=l2 lab=GND}
-C {vsource.sym} 30 80 0 0 {name=IN0 value=1.0 savecurrent=true}
-C {vsource.sym} 90 100 0 0 {name=IN1 value=0.5 savecurrent=true}
-C {vsource.sym} 390 110 0 0 {name=OUT value=0 savecurrent=true}
-C {vsource.sym} 230 -220 0 0 {name=sel value=1.2 savecurrent=false}
+C {vsource.sym} 350 -210 0 0 {name=VIN0 value=1.0 savecurrent=true}
+C {vsource.sym} 430 -210 0 0 {name=VIN1 value=0.5 savecurrent=true}
+C {vsource.sym} 230 -220 0 0 {name=Vsel value=1.2 savecurrent=false}
 C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=sel}
 C {lab_pin.sym} 170 110 2 1 {name=p1 sig_type=std_logic lab=sel}
@@ -200,4 +207,24 @@ write neuron_tb.raw
 .endc
 
 "}
+<<<<<<< HEAD
 >>>>>>> 0d75509 (Added Mux Schematic and testbench init)
+=======
+C {res.sym} 400 140 0 0 {name=RLOAD
+value=1G
+footprint=1206
+device=resistor
+m=1}
+C {capa.sym} 330 140 0 0 {name=CLOAD
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}
+C {lab_pin.sym} 460 70 0 1 {name=p2 sig_type=std_logic lab=out}
+C {lab_pin.sym} 350 -270 2 1 {name=p3 sig_type=std_logic lab=in0}
+C {lab_pin.sym} 430 -270 2 1 {name=p4 sig_type=std_logic lab=in1}
+C {gnd.sym} 350 -110 0 0 {name=l4 lab=GND}
+C {gnd.sym} 430 -110 0 0 {name=l5 lab=GND}
+C {lab_pin.sym} 140 50 2 1 {name=p5 sig_type=std_logic lab=in0}
+C {lab_pin.sym} 90 70 2 1 {name=p6 sig_type=std_logic lab=in1}
+>>>>>>> 528cb96 (minor updates to the tb of mux)
