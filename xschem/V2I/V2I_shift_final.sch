@@ -12,25 +12,18 @@ N 10 30 70 30 {lab=#net2}
 N 10 -20 10 30 {lab=#net2}
 N -50 30 10 30 {lab=#net2}
 N -90 -20 10 -20 {lab=#net2}
-N -110 30 -90 30 {lab=0}
-N -90 60 -90 120 {lab=GND}
-N 110 30 130 30 {lab=0}
-N 110 60 110 120 {lab=GND}
-N 110 -100 110 -90 {lab=#net3}
-N 110 -100 200 -100 {lab=#net3}
-N 260 -100 350 -100 {lab=out}
-N 10 -340 10 -320 {lab=#net1}
+N -90 80 -90 120 {lab=GND}
+N 110 80 110 120 {lab=GND}
+N 110 -100 110 0 {lab=out}
+N 110 -100 350 -100 {lab=out}
 N -90 -320 10 -320 {lab=#net1}
-N -90 -210 -90 -200 {lab=#net4}
+N -90 -210 -90 -20 {lab=#net2}
 N -90 -20 -90 0 {lab=#net2}
-N -90 -140 -90 -20 {lab=#net2}
-N 110 -30 110 0 {lab=#net5}
-N 110 -210 110 -190 {lab=#net6}
-N 110 -130 110 -100 {lab=#net3}
+N 110 -210 110 -100 {lab=out}
 N 10 -480 50 -480 {lab=VDD}
 N 50 -550 50 -480 {lab=VDD}
 N -140 -480 -30 -480 {lab=Vbias}
-N 10 -450 10 -400 {lab=#net7}
+N 10 -450 10 -320 {lab=#net1}
 N -90 -240 -60 -240 {lab=VDD}
 N 150 -240 170 -240 {lab=inn_cm}
 N -150 -240 -130 -240 {lab=inp_cm}
@@ -42,10 +35,16 @@ N 10 120 110 120 {lab=GND}
 N 550 -300 590 -300 {lab=VDD}
 N 590 -370 590 -300 {lab=VDD}
 N 410 -300 510 -300 {lab=Vbias}
-N 550 -160 550 -50 {lab=out}
-N 550 -270 550 -220 {lab=#net8}
-N 550 -420 550 -330 {lab=#net9}
-C {ammeter.sym} 230 -100 3 0 {name=VIout savecurrent=true spice_ignore=0}
+N 550 -270 550 -50 {lab=out}
+N 550 -420 550 -330 {lab=VDD}
+N -120 30 -90 30 {lab=GND}
+N -120 30 -120 80 {lab=GND}
+N -120 80 -90 80 {lab=GND}
+N -90 60 -90 80 {lab=GND}
+N 110 30 140 30 {lab=GND}
+N 140 30 140 80 {lab=GND}
+N 110 80 140 80 {lab=GND}
+N 110 60 110 80 {lab=GND}
 C {sg13g2_pr/sg13_hv_pmos.sym} -110 -240 0 0 {name=M2
 l=1u
 w=4u
@@ -63,12 +62,6 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {ipin.sym} 170 -240 2 0 {name=inn_cm lab=inn_cm}
-C {ammeter.sym} 10 -370 0 1 {name=Vbias1 savecurrent=true spice_ignore=0}
-C {ammeter.sym} 110 -160 0 1 {name=Vbranch1 savecurrent=true spice_ignore=0}
-C {ammeter.sym} -90 -170 0 1 {name=Vbranch2 savecurrent=true spice_ignore=0}
-C {ammeter.sym} 110 -60 0 1 {name=Vbranch3 savecurrent=true spice_ignore=0}
-C {gnd.sym} -110 30 0 0 {name=l5 lab=0}
-C {gnd.sym} 130 30 0 0 {name=l12 lab=0}
 C {sg13g2_pr/sg13_hv_pmos.sym} -10 -480 0 0 {name=M13
 l=1u
 w=4u
@@ -106,7 +99,6 @@ C {iopin.sym} 10 -610 3 0 {name=p10 lab=VDD}
 C {iopin.sym} 10 180 1 0 {name=p7 lab=GND}
 C {lab_wire.sym} 590 -330 1 0 {name=p9 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 470 -300 0 0 {name=p1 sig_type=std_logic lab=Vbias}
-C {ammeter.sym} 550 -190 0 1 {name=Vbias3 savecurrent=true spice_ignore=0}
 C {lab_wire.sym} 550 -100 0 0 {name=p12 sig_type=std_logic lab=out}
 C {sg13g2_pr/sg13_hv_pmos.sym} 530 -300 0 0 {name=M4
 l=1u
