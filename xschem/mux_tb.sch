@@ -80,12 +80,13 @@ N 1030 220 1050 220 {lab=out}
 =======
 E {}
 N 100 -190 100 -110 {lab=GND}
-N 230 140 230 240 {lab=GND}
-N 230 -10 230 10 {lab=VDD}
-N 330 240 400 240 {lab=GND}
-N 330 70 400 70 {lab=out}
+N 250 230 250 330 {lab=GND}
+N 250 80 250 100 {lab=VDD}
+N 350 330 420 330 {lab=GND}
+N 350 160 420 160 {lab=out}
 N 230 -190 230 -110 {lab=GND}
 N 230 -280 230 -250 {lab=sel}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 0d75509 (Added Mux Schematic and testbench init)
 =======
@@ -103,6 +104,21 @@ N 430 -180 430 -110 {lab=GND}
 N 140 50 170 50 {lab=in0}
 N 90 70 170 70 {lab=in1}
 >>>>>>> 528cb96 (minor updates to the tb of mux)
+=======
+N 420 260 420 330 {lab=GND}
+N 350 260 350 330 {lab=GND}
+N 250 330 350 330 {lab=GND}
+N 350 160 350 200 {lab=out}
+N 290 160 350 160 {lab=out}
+N 420 160 420 200 {lab=out}
+N 420 160 480 160 {lab=out}
+N 510 -270 510 -240 {lab=in0}
+N 510 -180 510 -110 {lab=GND}
+N 590 -270 590 -240 {lab=in1}
+N 590 -180 590 -110 {lab=GND}
+N 160 140 190 140 {lab=in0}
+N 110 160 190 160 {lab=in1}
+>>>>>>> f83436f (minor updates to the tb of mux)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -181,45 +197,62 @@ C {lab_pin.sym} 1050 220 0 1 {name=p10 sig_type=std_logic lab=out}
 C {vsource.sym} 100 -220 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 100 -110 0 0 {name=l7 lab=GND}
 C {vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
-C {mux2I1.sym} 210 100 0 0 {name=x1}
-C {vdd.sym} 230 -10 0 0 {name=l1 lab=VDD}
-C {gnd.sym} 230 240 0 0 {name=l2 lab=GND}
-C {vsource.sym} 350 -210 0 0 {name=VIN0 value=1.0 savecurrent=true}
-C {vsource.sym} 430 -210 0 0 {name=VIN1 value=0.5 savecurrent=true}
-C {vsource.sym} 230 -220 0 0 {name=Vsel value=1.2 savecurrent=false}
+C {mux2I1.sym} 230 190 0 0 {name=x1}
+C {vdd.sym} 250 80 0 0 {name=l1 lab=VDD}
+C {gnd.sym} 250 330 0 0 {name=l2 lab=GND}
+C {vsource.sym} 510 -210 0 0 {name=VIN0 value=1.0 savecurrent=true}
+C {vsource.sym} 590 -210 0 0 {name=VIN1 value=0.5 savecurrent=true}
+C {vsource.sym} 230 -220 0 0 {name=Vsel value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
 C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=sel}
-C {lab_pin.sym} 170 110 2 1 {name=p1 sig_type=std_logic lab=sel}
-C {simulator_commands_shown.sym} -900 30 0 0 {name=example_Simulator1
+C {lab_pin.sym} 190 200 2 1 {name=p1 sig_type=std_logic lab=sel}
+C {simulator_commands_shown.sym} -560 10 0 0 {name=example_Simulator1
 simulator=ngspice
 only_toplevel=false 
 value="
-.param temp=27
+.param temp 27
 
-.ic V(xneuron.vmem)=0 V(xneuron.xref.vref)=0 V(REQ)=0 V(ACK)=0 V(xneuron.xadap.CapAdapt)=0
+
+
+* Select toggles
+VSEL sel GND PULSE(0 1.2 10u 1n 1n 10u 20u)
+
+* Analog input 0
+VIN0 in0 GND SIN(0.6 0.2 20k)
+
+* Analog input 1
+VIN1 in1 GND PWL(0u 0.2 10u 0.8 20u 0.4 30u 1.0 40u 0.5)
+
+XMU VDD VSS sel in0 out in1 mux2I1
+
+RLOAD out GND 1G
+CLOAD out GND 2p
 
 .control
-
-save V(I_thr) V(I_lk) V(Iref) V(I_adapt) V(I_thrahp) V(I_lkahp) 
-save V(ACK) V(REQ) V(vmem) V(xneuron.xref.vref) V(CapAdap)
-tran 50n 20m
-write neuron_tb.raw
+save v(sel) v(in0) v(in1) v(out)
+tran 1n 40u
+plot v(in0) v(in1) v(out) v(sel)
 .endc
 
 "}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0d75509 (Added Mux Schematic and testbench init)
 =======
 C {res.sym} 400 140 0 0 {name=RLOAD
+=======
+C {res.sym} 420 230 0 0 {name=RLOAD
+>>>>>>> f83436f (minor updates to the tb of mux)
 value=1G
 footprint=1206
 device=resistor
 m=1}
-C {capa.sym} 330 140 0 0 {name=CLOAD
+C {capa.sym} 350 230 0 0 {name=CLOAD
 m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
+<<<<<<< HEAD
 C {lab_pin.sym} 460 70 0 1 {name=p2 sig_type=std_logic lab=out}
 C {lab_pin.sym} 350 -270 2 1 {name=p3 sig_type=std_logic lab=in0}
 C {lab_pin.sym} 430 -270 2 1 {name=p4 sig_type=std_logic lab=in1}
@@ -228,3 +261,12 @@ C {gnd.sym} 430 -110 0 0 {name=l5 lab=GND}
 C {lab_pin.sym} 140 50 2 1 {name=p5 sig_type=std_logic lab=in0}
 C {lab_pin.sym} 90 70 2 1 {name=p6 sig_type=std_logic lab=in1}
 >>>>>>> 528cb96 (minor updates to the tb of mux)
+=======
+C {lab_pin.sym} 480 160 0 1 {name=p2 sig_type=std_logic lab=out}
+C {lab_pin.sym} 510 -270 2 1 {name=p3 sig_type=std_logic lab=in0}
+C {lab_pin.sym} 590 -270 2 1 {name=p4 sig_type=std_logic lab=in1}
+C {gnd.sym} 510 -110 0 0 {name=l4 lab=GND}
+C {gnd.sym} 590 -110 0 0 {name=l5 lab=GND}
+C {lab_pin.sym} 160 140 2 1 {name=p5 sig_type=std_logic lab=in0}
+C {lab_pin.sym} 110 160 2 1 {name=p6 sig_type=std_logic lab=in1}
+>>>>>>> f83436f (minor updates to the tb of mux)
