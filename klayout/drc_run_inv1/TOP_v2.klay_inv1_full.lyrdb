@@ -3226,35 +3226,12 @@
     </ref>
    </references>
   </cell>
- <cell>
-   <name>pmosHV$1</name>
-   <variant />
-   <layout-name>pmosHV$1</layout-name>
-   <references>
-    <ref>
-     <parent>inv1</parent>
-     <trans>r0 *1 0.73,14.675</trans>
-    </ref>
-   </references>
-  </cell>
  </cells>
  <items>
   <item>
    <tags />
    <category>'LU.b'</category>
    <cell>nmosHV$1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>polygon: (0,0;0,4;1.18,4;1.18,0)</value>
-   </values>
-  </item>
- <item>
-   <tags />
-   <category>'LU.a'</category>
-   <cell>pmosHV$1</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment />
