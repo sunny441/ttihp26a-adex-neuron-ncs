@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ** sch_path: /foss/designs/adex_neuron/ttihp26a-adex-neuron-ncs/xschem/tg_lv.sch
 .subckt tg_lv VDD VSS SEL OUT IN
 *.PININFO IN:I VDD:B VSS:B OUT:O SEL:I
@@ -17,5 +18,30 @@ M3 out in VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1
 M4 out in VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1
 Mdumm1 VDD VDD VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1 m=2
 Mdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
+=======
+** sch_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/tg_lv.sch
+.subckt tg_lv VDD VSS SEL OUT IN
+*.PININFO IN:I VDD:B VSS:B OUT:O SEL:I
+x1 VDD SEL selbar VSS inv_lv
+MM3 IN SEL OUT pwell sg13_lv_nmos w=8u l=0.15u ng=8
+MM4 IN selbar OUT nwell sg13_lv_pmos w=8u l=0.15u ng=8
+Mdumm1 VDD VDD VDD nwell sg13_lv_pmos w=1u l=0.15u ng=1
+Mdumm2 VSS VSS VSS pwell sg13_lv_nmos w=1u l=0.15u ng=1
+RR1 VDD nwell ntap1 A=6.459e-11 P=3.55e-05
+RR2 VSS pwell ptap1 A=6.159e-11 P=3.422e-05
+.ends
+
+* expanding   symbol:  inv_lv.sym # of pins=4
+** sym_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/inv_lv.sym
+** sch_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/inv_lv.sch
+.subckt inv_lv VDD in out VSS
+*.PININFO in:I out:O VDD:B VSS:B
+MM3 out in VDD nwell sg13_lv_pmos w=1u l=0.15u ng=1
+MM4 out in VSS pwell sg13_lv_nmos w=1u l=0.15u ng=1
+Mdumm1 VDD VDD VDD nwell sg13_lv_pmos w=1u l=0.15u ng=1
+Mdumm2 VSS VSS VSS pwell sg13_lv_nmos w=1u l=0.15u ng=1
+RR1 VDD nwell ntap1 A=4.134e-11 P=2.64e-05
+RR2 VSS pwell ptap1 A=3.816e-11 P=2.512e-05
+>>>>>>> 983eb2a (DRC Cleaned LVS pending)
 .ends
 
