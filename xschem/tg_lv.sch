@@ -7,6 +7,9 @@ F {}
 E {}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 N -240 -680 -210 -680 {lab=VDD}
 N -240 -640 -210 -640 {lab=VSS}
 N 10 -520 10 -430 {lab=IN}
@@ -35,6 +38,7 @@ N 190 -450 250 -450 {lab=VSS}
 N 200 -600 260 -600 {lab=VDD}
 N 40 -620 40 -580 {lab=VDD}
 N 40 -460 40 -430 {lab=VSS}
+<<<<<<< HEAD
 C {ipin.sym} -90 -520 0 0 {name=p2 lab=IN}
 C {iopin.sym} -240 -680 2 0 {name=p1 lab=VDD}
 C {iopin.sym} -240 -640 2 0 {name=p3 lab=VSS}
@@ -104,14 +108,16 @@ N 260 -380 320 -380 {lab=pwell}
 N 260 -660 320 -660 {lab=nwell}
 N 40 -620 40 -580 {lab=nwell}
 N 40 -460 40 -430 {lab=pwell}
+=======
+>>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 C {ipin.sym} -90 -520 0 0 {name=p2 lab=IN}
-C {iopin.sym} -210 -620 2 0 {name=p1 lab=VDD}
-C {iopin.sym} -210 -580 2 0 {name=p3 lab=VSS}
+C {iopin.sym} -240 -680 2 0 {name=p1 lab=VDD}
+C {iopin.sym} -240 -640 2 0 {name=p3 lab=VSS}
 C {opin.sym} 230 -520 0 0 {name=p4 lab=OUT}
-C {lab_pin.sym} -180 -620 2 0 {name=p5 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} -180 -580 2 0 {name=p6 sig_type=std_logic lab=VSS}
-C {ipin.sym} -210 -540 0 0 {name=p7 lab=SEL}
-C {lab_pin.sym} -180 -540 2 0 {name=p9 sig_type=std_logic lab=SEL}
+C {lab_pin.sym} -210 -680 2 0 {name=p5 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -210 -640 2 0 {name=p6 sig_type=std_logic lab=VSS}
+C {ipin.sym} -240 -600 0 0 {name=p7 lab=SEL}
+C {lab_pin.sym} -210 -600 2 0 {name=p9 sig_type=std_logic lab=SEL}
 C {lab_pin.sym} -20 -350 0 0 {name=p21 sig_type=std_logic lab=SEL}
 C {lab_pin.sym} -130 -430 2 0 {name=p11 sig_type=std_logic lab=selbar}
 C {inv_lv.sym} -240 -430 0 0 {name=x1}
@@ -148,6 +154,9 @@ spiceprefix=X
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 C {sg13g2_pr/sg13_lv_pmos.sym} 180 -600 0 0 {name=Mdumm1
 l=0.15u
 w=1u
@@ -170,6 +179,7 @@ C {lab_pin.sym} 200 -660 2 0 {name=p13 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 190 -380 2 0 {name=p22 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 260 -600 2 0 {name=p23 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 250 -450 2 0 {name=p24 sig_type=std_logic lab=VSS}
+<<<<<<< HEAD
 =======
 >>>>>>> b8b78d7 (Added TG sschematics and symbols)
 =======
@@ -212,3 +222,5 @@ C {lab_pin.sym} 260 -310 2 0 {name=p22 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 320 -660 2 0 {name=p23 sig_type=std_logic lab=nwell}
 C {lab_pin.sym} 320 -380 2 0 {name=p24 sig_type=std_logic lab=pwell}
 >>>>>>> 983eb2a (DRC Cleaned LVS pending)
+=======
+>>>>>>> e95b4f9 (Adeed Mux Cell to Top)
