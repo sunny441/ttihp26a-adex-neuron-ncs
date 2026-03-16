@@ -1,0 +1,8 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 13/03/2026 19:44
+
+.SUBCKT inv VSS out in VDD
+M$1 VSS in out \$1 sg13_hv_nmos L=0.5u W=4u AS=1.36p AD=1.36p PS=8.68u PD=8.68u
+M$2 VDD in out \$7 sg13_hv_pmos L=0.5u W=4u AS=1.36p AD=1.36p PS=8.68u PD=8.68u
+R$3 \$7 VDD ntap1 A=2.75p P=7.5u
+R$4 \$1 VSS ptap1 A=2.75p P=7.5u
+.ENDS inv
