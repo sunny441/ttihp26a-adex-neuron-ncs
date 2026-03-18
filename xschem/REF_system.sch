@@ -5,38 +5,50 @@ V {}
 S {}
 F {}
 E {}
+P 4 1 -410 -470 {}
 N -10 -320 -10 -280 {lab=REQ}
-N -50 -320 -50 -310 {lab=Vref}
-N -50 -330 -50 -320 {lab=Vref}
-N -220 -260 -220 -70 {lab=GND}
-N -460 -320 -50 -320 {lab=Vref}
-N -500 -320 -500 -70 {lab=GND}
-N -50 -510 -50 -460 {lab=VDD}
-N -50 -140 -50 -70 {lab=GND}
+N -50 -320 -50 -310 {lab=Vrefcap}
+N -50 -330 -50 -320 {lab=Vrefcap}
+N -220 -320 -50 -320 {lab=Vrefcap}
 N -50 -250 -50 -170 {lab=#net1}
 N -10 -140 40 -140 {lab=V_ref}
 N -10 -320 100 -320 {lab=REQ}
 N -10 -360 -10 -320 {lab=REQ}
 N -10 -460 90 -460 {lab=ACK}
 N -500 -430 -500 -350 {lab=V_mem}
-N -120 -280 -50 -280 {lab=GND}
-N -120 -280 -120 -70 {lab=GND}
-N -120 -70 -50 -70 {lab=GND}
-N -260 -70 -220 -70 {lab=GND}
-N -220 -70 -120 -70 {lab=GND}
+N -260 -70 -50 -70 {lab=GND}
 N -260 -70 -260 -50 {lab=GND}
 N -500 -70 -260 -70 {lab=GND}
 N -50 -430 -50 -390 {lab=#net2}
-N -120 -360 -50 -360 {lab=VDD}
-N -120 -510 -120 -360 {lab=VDD}
-N -120 -510 -50 -510 {lab=VDD}
-N -50 -540 -50 -510 {lab=VDD}
-C {lab_wire.sym} -180 -320 2 0 {name=p13 sig_type=std_logic lab=Vref}
-C {capa.sym} -220 -290 0 0 {name=Cr
-m=1
-value=0.5p
-footprint=1206
-device="ceramic capacitor"}
+N -220 -360 -220 -320 {lab=Vrefcap}
+N -460 -320 -220 -320 {lab=Vrefcap}
+N -50 -540 -50 -490 {lab=VDD}
+N -80 -460 -50 -460 {lab=nwell}
+N -80 -360 -50 -360 {lab=nwell}
+N -80 -280 -50 -280 {lab=psub}
+N -50 -110 -50 -70 {lab=GND}
+N -80 -140 -50 -140 {lab=psub}
+N -500 -290 -500 -70 {lab=GND}
+N -530 -320 -500 -320 {lab=psub}
+N -980 -590 -980 -570 {lab=GND}
+N -1010 -620 -980 -620 {lab=psub}
+N -980 -590 -940 -590 {lab=GND}
+N -940 -650 -940 -590 {lab=GND}
+N -980 -650 -940 -650 {lab=GND}
+N -840 -590 -840 -570 {lab=GND}
+N -870 -620 -840 -620 {lab=psub}
+N -840 -590 -800 -590 {lab=GND}
+N -800 -650 -800 -590 {lab=GND}
+N -840 -650 -800 -650 {lab=GND}
+N -700 -590 -700 -570 {lab=GND}
+N -730 -620 -700 -620 {lab=psub}
+N -700 -590 -660 -590 {lab=GND}
+N -660 -650 -660 -590 {lab=GND}
+N -700 -650 -660 -650 {lab=GND}
+N -670 -370 -670 -340 {lab=GND}
+N -670 -280 -670 -250 {lab=psub}
+N -840 -360 -840 -330 {lab=VDD}
+N -840 -270 -840 -240 {lab=nwell}
 C {sg13g2_pr/sg13_hv_pmos.sym} -30 -360 0 1 {name=M10
 l=0.5u
 w=1u
@@ -83,3 +95,58 @@ C {ipin.sym} 40 -140 0 1 {name=p3 lab=V_ref}
 C {ipin.sym} 100 -320 0 1 {name=p4 lab=REQ}
 C {ipin.sym} 90 -460 0 1 {name=p5 lab=ACK}
 C {ipin.sym} -500 -430 0 0 {name=p6 lab=V_mem}
+C {opin.sym} -220 -360 0 0 {name=p7 lab=Vrefcap}
+C {lab_wire.sym} -60 -460 0 0 {name=p8 sig_type=std_logic lab=nwell}
+C {lab_wire.sym} -60 -360 0 0 {name=p9 sig_type=std_logic lab=nwell}
+C {lab_wire.sym} -60 -280 0 0 {name=p10 sig_type=std_logic lab=psub}
+C {lab_wire.sym} -60 -140 0 0 {name=p11 sig_type=std_logic lab=psub}
+C {lab_wire.sym} -510 -320 0 0 {name=p12 sig_type=std_logic lab=psub}
+C {sg13g2_pr/sg13_hv_nmos.sym} -960 -620 0 1 {name=Mdum3
+l=4u
+w=2u
+ng=4
+m=2
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} -1010 -620 0 0 {name=p18 sig_type=std_logic lab=psub}
+C {lab_wire.sym} -980 -570 0 0 {name=p19 sig_type=std_logic lab=GND}
+C {sg13g2_pr/sg13_hv_nmos.sym} -820 -620 0 1 {name=Mdum4
+l=3u
+w=0.5u
+ng=1
+m=4
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} -870 -620 0 0 {name=p20 sig_type=std_logic lab=psub}
+C {lab_wire.sym} -840 -570 0 0 {name=p21 sig_type=std_logic lab=GND}
+C {sg13g2_pr/sg13_hv_nmos.sym} -680 -620 0 1 {name=Mdum5
+l=3u
+w=2u
+ng=1
+m=4
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} -730 -620 0 0 {name=p22 sig_type=std_logic lab=psub}
+C {lab_wire.sym} -700 -570 0 0 {name=p23 sig_type=std_logic lab=GND}
+C {iopin.sym} -670 -250 3 1 {name=p17 lab=psub}
+C {sg13g2_pr/ptap1_ring.sym} -670 -310 0 0 {name=R4
+model=ptap1
+spiceprefix=X
+w=25.7e-6
+l=9e-6
+rw=0.3e-6
+}
+C {lab_wire.sym} -670 -370 0 0 {name=p24 sig_type=std_logic lab=GND}
+C {sg13g2_pr/ntap1_ring.sym} -840 -300 0 0 {name=R1
+model=ntap1
+spiceprefix=X
+w=24e-6
+l=7e-6
+rw=0.3e-6
+}
+C {lab_wire.sym} -840 -360 0 0 {name=p33 sig_type=std_logic lab=VDD}
+C {iopin.sym} -840 -240 3 1 {name=p37 lab=nwell
+}
