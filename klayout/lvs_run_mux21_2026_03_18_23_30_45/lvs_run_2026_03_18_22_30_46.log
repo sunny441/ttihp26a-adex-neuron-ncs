@@ -1,0 +1,18 @@
+18-Mar-2026 23:30:46 | INFO    | Your Klayout version is: KLayout 0.30.7
+18-Mar-2026 23:30:46 | INFO    | Running SG13G2 LVS checks on design /foss/designs/ttihp26a-adex-neuron-ncs/klayout/mux.gds on cell mux21
+18-Mar-2026 23:30:48 | INFO    | ==============================================================================
+18-Mar-2026 23:30:48 | INFO    | Important Summary
+18-Mar-2026 23:30:48 | INFO    | +------------------+----------------------------------------------------------------------------------+
+18-Mar-2026 23:30:48 | INFO    | | Status           | FAIL                                                                             |
+18-Mar-2026 23:30:48 | INFO    | | Mode             | COMPARE                                                                          |
+18-Mar-2026 23:30:48 | INFO    | | Outcome          | Comparison mode: FAIL (netlists do not match).                                   |
+18-Mar-2026 23:30:48 | INFO    | | Layout           | mux.gds                                                                          |
+18-Mar-2026 23:30:48 | INFO    | | Top Cell         | mux21                                                                            |
+18-Mar-2026 23:30:48 | INFO    | | Results Dir      | /foss/designs/ttihp26a-adex-neuron-ncs/klayout/lvs_run_mux21_2026_03_18_23_30_45 |
+18-Mar-2026 23:30:48 | INFO    | | Warnings         | 0                                                                                |
+18-Mar-2026 23:30:48 | INFO    | | Errors           | 1                                                                                |
+18-Mar-2026 23:30:48 | INFO    | | Run Time (s)     | 2.748                                                                            |
+18-Mar-2026 23:30:48 | INFO    | +------------------+----------------------------------------------------------------------------------+
+18-Mar-2026 23:30:48 | ERROR   | Key errors:
+18-Mar-2026 23:30:48 | ERROR   |   - 2026-03-18 23:30:48 +0100: Memory Usage (475084K) : ERROR : Netlists don't match
+18-Mar-2026 23:30:48 | INFO    | ==============================================================================
