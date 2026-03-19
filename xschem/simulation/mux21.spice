@@ -11,10 +11,10 @@ x2 VDD VSS SEL1 OUT IN1 tg_lv
 .subckt tg_lv VDD VSS SEL OUT IN
 *.PININFO IN:I VDD:B VSS:B OUT:O SEL:I
 x1 VDD SEL selbar VSS inv_lv
-M3 IN SEL OUT VSS sg13_lv_nmos w=8u l=0.15u ng=8
-M4 IN selbar OUT VDD sg13_lv_pmos w=8u l=0.15u ng=8
-Mdumm1 VDD VDD VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1 m=2
-Mdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
+MM3 IN SEL OUT VSS sg13_lv_nmos w=8u l=0.15u ng=8
+MM4 IN selbar OUT VDD sg13_lv_pmos w=8u l=0.15u ng=8
+MMdumm1 VDD VDD VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1 m=2
+MMdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
 .ends
 
 
@@ -23,9 +23,9 @@ Mdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
 ** sch_path: /foss/designs/ttihp26a-adex-neuron-ncs/xschem/inv_lv.sch
 .subckt inv_lv VDD in out VSS
 *.PININFO in:I out:O VDD:B VSS:B
-M3 out in VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1
-M4 out in VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1
-Mdumm1 VDD VDD VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1 m=2
-Mdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
+MM3 out in VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1
+MM4 out in VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1
+MMdumm1 VDD VDD VDD VDD sg13_lv_pmos w=1u l=0.15u ng=1 m=2
+MMdumm2 VSS VSS VSS VSS sg13_lv_nmos w=1u l=0.15u ng=1 m=2
 .ends
 

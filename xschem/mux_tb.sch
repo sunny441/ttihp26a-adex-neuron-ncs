@@ -1,43 +1,20 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 v {xschem version=3.4.8RC file_version=1.3}
-=======
-v {xschem version=3.4.7 file_version=1.2}
->>>>>>> 0d75509 (Added Mux Schematic and testbench init)
-=======
-v {xschem version=3.4.8RC file_version=1.3}
->>>>>>> b8b78d7 (Added TG sschematics and symbols)
-=======
-v {xschem version=3.4.8RC file_version=1.3}
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 G {}
 K {}
 V {}
 S {}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 F {}
 E {}
-=======
-F {}
-E {}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3719ff7 (added TG testbenches)
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 B 2 70 -430 870 -30 {flags=graph
-y1=0
-y2=1.5
+y1=-4.5
+y2=-3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=800e-6
+x1=0.1
+x2=1.1
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -51,18 +28,18 @@ logx=0
 logy=0
 autoload=1
 sim_type=tran
-rawfile=$netlist_dir/tg2_tb.raw
-color="4 5 12"}
+rawfile=$netlist_dir/mux_tb.raw
+color="4 5 6"}
 B 2 75 -830 875 -430 {flags=graph
 y1=0
-y2=1.5
+y2=1e
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=800e-6
+x1=0.1
+x2=1.1
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -88,47 +65,6 @@ N 330 375 330 405 {lab=in1}
 N 330 465 330 535 {lab=GND}
 N 265 215 265 295 {lab=GND}
 N 265 125 265 155 {lab=S1}
-<<<<<<< HEAD
-=======
-<<<<<<<< HEAD:xschem/tg2_tb.sch
-N 665 365 700 365 {lab=in1}
-N 665 400 685 400 {lab=S1}
-N 770 305 770 315 {lab=VDD}
-N 770 415 770 430 {lab=GND}
-N 770 210 770 230 {lab=GND}
-N 840 160 880 160 {lab=out}
-N 840 365 880 365 {lab=out}
-N 880 270 880 365 {lab=out}
-N 880 270 920 270 {lab=out}
-N 880 160 880 270 {lab=out}
-<<<<<<< HEAD
-=======
-N 100 -190 100 -110 {lab=GND}
-N 260 120 260 140 {lab=VDD}
-N 230 -190 230 -110 {lab=GND}
-N 230 -280 230 -250 {lab=S0}
-N 580 -250 580 -220 {lab=in0}
-N 580 -160 580 -90 {lab=GND}
-N 155 190 190 190 {lab=in0}
-N 155 225 175 225 {lab=S0}
-N 690 190 825 190 {lab=out}
-N 680 -245 680 -215 {lab=in1}
-N 680 -155 680 -85 {lab=GND}
-N 285 -95 285 -15 {lab=GND}
-N 285 -185 285 -155 {lab=S1}
-N 155 395 190 395 {lab=in1}
-N 155 430 175 430 {lab=S1}
-N 330 190 690 190 {lab=out}
-N 260 335 260 345 {lab=VDD}
-N 690 190 690 395 {lab=out}
-N 330 395 690 395 {lab=out}
-N 260 445 260 460 {lab=GND}
-N 260 240 260 260 {lab=GND}
->>>>>>> 932c286 (working schematic)
-=======
->>>>>>> 3719ff7 (added TG testbenches)
-========
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 N 705 190 730 190 {lab=in0}
 N 655 210 730 210 {lab=in1}
 N 760 280 760 305 {lab=S0}
@@ -136,64 +72,6 @@ N 780 280 780 330 {lab=S1}
 N 880 280 880 300 {lab=GND}
 N 880 140 880 160 {lab=VDD}
 N 1030 220 1050 220 {lab=out}
-<<<<<<< HEAD
-=======
-=======
-F {}
->>>>>>> b8b78d7 (Added TG sschematics and symbols)
-E {}
-N 100 -190 100 -110 {lab=GND}
-N 260 120 260 140 {lab=VDD}
-N 350 330 420 330 {lab=GND}
-N 230 -190 230 -110 {lab=GND}
-N 230 -280 230 -250 {lab=sel}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0d75509 (Added Mux Schematic and testbench init)
-=======
-N 400 170 400 240 {lab=GND}
-N 330 170 330 240 {lab=GND}
-N 230 240 330 240 {lab=GND}
-N 330 70 330 110 {lab=out}
-N 270 70 330 70 {lab=out}
-N 400 70 400 110 {lab=out}
-N 400 70 460 70 {lab=out}
-N 350 -270 350 -240 {lab=in0}
-N 350 -180 350 -110 {lab=GND}
-N 430 -270 430 -240 {lab=in1}
-N 430 -180 430 -110 {lab=GND}
-N 140 50 170 50 {lab=in0}
-N 90 70 170 70 {lab=in1}
->>>>>>> 528cb96 (minor updates to the tb of mux)
-=======
-N 420 260 420 330 {lab=GND}
-N 350 260 350 330 {lab=GND}
-N 510 -270 510 -240 {lab=in0}
-N 510 -180 510 -110 {lab=GND}
-N 590 -270 590 -240 {lab=in1}
-N 590 -180 590 -110 {lab=GND}
-<<<<<<< HEAD
-N 160 140 190 140 {lab=in0}
-N 110 160 190 160 {lab=in1}
->>>>>>> f83436f (minor updates to the tb of mux)
-=======
-N 260 -60 320 -60 {lab=sel}
-N 460 -60 510 -60 {lab=selB}
-N 240 240 240 370 {lab=selB}
-N 220 240 220 380 {lab=sel}
-N 160 170 170 170 {lab=in0}
-N 160 210 170 210 {lab=in1}
-N 420 190 490 190 {lab=out}
-N 350 190 350 200 {lab=out}
-N 310 190 350 190 {lab=out}
-N 420 190 420 200 {lab=out}
-N 350 190 420 190 {lab=out}
-N 260 240 260 330 {lab=GND}
-N 260 330 350 330 {lab=GND}
->>>>>>> b8b78d7 (Added TG sschematics and symbols)
-=======
->>>>>>>> e95b4f9 (Adeed Mux Cell to Top):xschem/mux_tb.sch
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 C {simulator_commands_shown.sym} -300 -230 0 0 {name=lib_import
 simulator=ngspice
 only_toplevel=false 
@@ -201,13 +79,6 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerMOShv.lib mos_tt"
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3719ff7 (added TG testbenches)
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 C {vsource.sym} 60 205 0 0 {name=VDD1 value=1.2 savecurrent=false}
 C {gnd.sym} 60 315 0 0 {name=l7 lab=GND}
 C {vdd.sym} 60 175 0 0 {name=l8 lab=VDD}
@@ -232,180 +103,22 @@ C {lab_pin.sym} 780 330 2 1 {name=p8 sig_type=std_logic lab=S1
 }
 C {gnd.sym} 880 300 0 0 {name=l10 lab=GND}
 C {simulator_commands_shown.sym} -420 190 0 0 {name=TB_Simulator
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
 simulator=ngspice
 only_toplevel=false 
 value="
 .param temp 27
 .control
 op
-write tg2_tb.raw
+write mux_tb.raw
 save v(S0) v(S1) v(in0) v(in1) v(out)
 tran 1u 800u
-write tg2_tb.raw
-.endc
-"}
-C {launcher.sym} -370 90 0 0 {name=h5
-descr="load waves"
-tclcommand="xschem raw_read $netlist_dir/tg1_tb.raw tran"
-}
-C {launcher.sym} -360 40 0 0 {name=h4
-descr=SimulateNGSPICE
-tclcommand="
-# Setup the default simulation commands if not already set up
-# for example by already launched simulations.
-set_sim_defaults
-puts $sim(spice,1,cmd) 
-
-# Change the Xyce command. In the spice category there are currently
-# 5 commands (0, 1, 2, 3, 4). Command 3 is the Xyce batch
-# you can get the number by querying $sim(spice,n)
-set sim(spice,1,cmd) \{ngspice  \\"$N\\" -a\}
-
-# change the simulator to be used (Xyce)
-set sim(spice,default) 0
-
-# Create FET and BIP .save file
-mkdir -p $netlist_dir
-write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get current_name]]].save
-
-# run netlist and simulation
-xschem netlist
-simulate
-"}
-<<<<<<< HEAD
-C {mux21.sym} 880 220 0 0 {name=x1}
-C {lab_pin.sym} 1050 220 0 1 {name=p10 sig_type=std_logic lab=out}
-=======
-<<<<<<<< HEAD:xschem/tg2_tb.sch
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
-=======
-C {vsource.sym} 100 -220 0 0 {name=VDD1 value=1.2 savecurrent=false}
-C {gnd.sym} 100 -110 0 0 {name=l7 lab=GND}
-C {vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
-<<<<<<< HEAD
-C {mux2I1.sym} 230 190 0 0 {name=x1}
-C {vdd.sym} 260 120 0 0 {name=l1 lab=VDD}
-C {vsource.sym} 510 -210 0 0 {name=VIN0 value=1.0 savecurrent=true}
-C {vsource.sym} 590 -210 0 0 {name=VIN1 value=0.5 savecurrent=true}
-C {vsource.sym} 230 -220 0 0 {name=Vsel value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
-C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=sel}
-C {lab_pin.sym} 220 380 1 1 {name=p1 sig_type=std_logic lab=sel}
-C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
-simulator=ngspice
-only_toplevel=false 
-value="
-.include mux2I1.save
-.include mux_tb.save
-.param temp 27
-
-* Select toggles
-VSEL sel GND PULSE(0 1.2 10u 1n 1n 10u 20u)
-
-* Analog input 0
-VIN0 in0 GND SIN(0.6 0.2 20k)
-
-* Analog input 1
-VIN1 in1 GND PWL(0u 0.2 10u 0.8 20u 0.4 30u 1.0 40u 0.5)
-
-XMU VDD VSS sel in0 out in1 mux2I1
-
-.control
-op
-save v(sel) v(in0) v(in1) v(out)
-tran 1n 40u
-plot v(in0) v(in1) v(out) v(sel)
 write mux_tb.raw
 .endc
-
-"}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0d75509 (Added Mux Schematic and testbench init)
-=======
-C {res.sym} 400 140 0 0 {name=RLOAD
-=======
-C {res.sym} 420 230 0 0 {name=RLOAD
->>>>>>> f83436f (minor updates to the tb of mux)
-value=1G
-footprint=1206
-device=resistor
-m=1}
-C {capa.sym} 350 230 0 0 {name=CLOAD
-m=1
-value=2p
-footprint=1206
-device="ceramic capacitor"}
-<<<<<<< HEAD
-<<<<<<< HEAD
-C {lab_pin.sym} 460 70 0 1 {name=p2 sig_type=std_logic lab=out}
-C {lab_pin.sym} 350 -270 2 1 {name=p3 sig_type=std_logic lab=in0}
-C {lab_pin.sym} 430 -270 2 1 {name=p4 sig_type=std_logic lab=in1}
-C {gnd.sym} 350 -110 0 0 {name=l4 lab=GND}
-C {gnd.sym} 430 -110 0 0 {name=l5 lab=GND}
-C {lab_pin.sym} 140 50 2 1 {name=p5 sig_type=std_logic lab=in0}
-C {lab_pin.sym} 90 70 2 1 {name=p6 sig_type=std_logic lab=in1}
->>>>>>> 528cb96 (minor updates to the tb of mux)
-=======
-C {lab_pin.sym} 480 160 0 1 {name=p2 sig_type=std_logic lab=out}
-=======
-C {lab_pin.sym} 490 190 0 1 {name=p2 sig_type=std_logic lab=out}
->>>>>>> b8b78d7 (Added TG sschematics and symbols)
-C {lab_pin.sym} 510 -270 2 1 {name=p3 sig_type=std_logic lab=in0}
-C {lab_pin.sym} 590 -270 2 1 {name=p4 sig_type=std_logic lab=in1}
-C {gnd.sym} 510 -110 0 0 {name=l4 lab=GND}
-C {gnd.sym} 590 -110 0 0 {name=l5 lab=GND}
-<<<<<<< HEAD
-C {lab_pin.sym} 160 140 2 1 {name=p5 sig_type=std_logic lab=in0}
-C {lab_pin.sym} 110 160 2 1 {name=p6 sig_type=std_logic lab=in1}
->>>>>>> f83436f (minor updates to the tb of mux)
-=======
-C {lab_pin.sym} 160 170 2 1 {name=p5 sig_type=std_logic lab=in0}
-C {lab_pin.sym} 160 210 2 1 {name=p6 sig_type=std_logic lab=in1}
-C {inv.sym} 460 -60 0 0 {name=x2}
-C {vdd.sym} 380 -100 0 0 {name=l6 lab=VDD}
-C {gnd.sym} 260 330 0 0 {name=l2 lab=GND}
-C {gnd.sym} 380 -20 0 0 {name=l9 lab=GND}
-C {lab_pin.sym} 260 -60 2 1 {name=p7 sig_type=std_logic lab=sel}
-C {lab_pin.sym} 510 -60 0 1 {name=p8 sig_type=std_logic lab=selB}
-C {lab_pin.sym} 240 370 1 1 {name=p10 sig_type=std_logic lab=selB}
->>>>>>> b8b78d7 (Added TG sschematics and symbols)
-=======
-C {vdd.sym} 260 120 0 0 {name=l1 lab=VDD}
-C {vsource.sym} 580 -190 0 0 {name=VIN0 value=1.0 savecurrent=true}
-C {vsource.sym} 230 -220 0 0 {name=Vsel value="PULSE(0 1.2 10u 1n 1n 10u 20u)"}
-C {gnd.sym} 230 -110 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} 230 -280 2 1 {name=p9 sig_type=std_logic lab=S0}
-C {simulator_commands_shown.sym} -520 10 0 0 {name=TB_Simulator
-=======
->>>>>>> 3719ff7 (added TG testbenches)
-simulator=ngspice
-only_toplevel=false 
-value="
-.param temp 27
-.control
-op
-write tg2_tb.raw
-save v(S0) v(S1) v(in0) v(in1) v(out)
-tran 1u 800u
-write tg2_tb.raw
-.endc
 "}
 C {launcher.sym} -370 90 0 0 {name=h5
 descr="load waves"
-tclcommand="xschem raw_read $netlist_dir/tg1_tb.raw tran"
+tclcommand="xschem raw_read $netlist_dir/tg2_tb.raw tran"
 }
-<<<<<<< HEAD
-C {lab_pin.sym} 155 430 2 1 {name=p8 sig_type=std_logic lab=S1
-}
-C {vdd.sym} 260 335 0 0 {name=l9 lab=VDD}
-C {gnd.sym} 260 460 0 0 {name=l10 lab=GND}
->>>>>>> 932c286 (working schematic)
-=======
 C {launcher.sym} -360 40 0 0 {name=h4
 descr=SimulateNGSPICE
 tclcommand="
@@ -430,9 +143,5 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 xschem netlist
 simulate
 "}
->>>>>>> 3719ff7 (added TG testbenches)
-========
 C {mux21.sym} 880 220 0 0 {name=x1}
 C {lab_pin.sym} 1050 220 0 1 {name=p10 sig_type=std_logic lab=out}
->>>>>>>> e95b4f9 (Adeed Mux Cell to Top):xschem/mux_tb.sch
->>>>>>> e95b4f9 (Adeed Mux Cell to Top)
